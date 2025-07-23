@@ -3,6 +3,9 @@
 
             npm install && npm run build
 
+## Composer
+
+            composer install
 
 ## Run
 
