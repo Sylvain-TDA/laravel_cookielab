@@ -14,7 +14,7 @@
 
     php artisan key:generate
 
-## DBB
+## DB
 
     php artisan migrate
 
