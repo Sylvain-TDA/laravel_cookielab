@@ -9,10 +9,11 @@
 
 ## .env 
 
-            If the file .env is missing in the root directory : 
-                     - copy the file .env.example
-                     - paste it in the same directory
-                     - rename it .env
+            cp .env.example .env
+
+## Php artisan
+
+            php artisan key:generate
 
 
 ## Run
