@@ -7,6 +7,10 @@
 
             composer install
 
+## Php artisan
+
+            php artisan serve
+
 ## Run
 
             composer run dev
