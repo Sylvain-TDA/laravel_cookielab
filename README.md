@@ -14,6 +14,12 @@
 
     php artisan key:generate
 
+## DBB
+
+    php artisan migrate
+
+Choose yes
+
 
 ## Run
 
