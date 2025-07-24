@@ -3,22 +3,30 @@
         <footer class="text-center text-lg-start"
             style="background-color: rgba(182, 110, 0, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); position:absolute; bottom:0; width: 100%;">
             <div class="container d-flex justify-content-center py-5">
-                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2"
-                    style="background-color: #ffedd3;">
-                    <i class="fab fa-facebook-f" style="color: black"></i>
+                <button type="button"
+                    class="btn btn-primary btn-lg d-flex align-items-center justify-content-center mx-2"
+                    style="background-color: #ffedd3; width: 60px; height: 60px; padding: 0; border-radius: 50%">
+                    <i class="fab fa-facebook-f" style="color: black; font-size: 1.5rem;"></i>
                 </button>
-                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2"
-                    style="background-color: #ffedd3;">
-                    <i class="fab fa-youtube" style="color: black"></i>
+
+                <button type="button"
+                    class="btn btn-primary btn-lg d-flex align-items-center justify-content-center mx-2"
+                    style="background-color: #ffedd3; width: 60px; height: 60px; padding: 0; border-radius: 50%">
+                    <i class="fab fa-youtube" style="color: black; font-size: 1.5rem;"></i>
                 </button>
-                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2"
-                    style="background-color: #ffedd3;">
-                    <i class="fab fa-instagram" style="color: black"></i>
+
+                <button type="button"
+                    class="btn btn-primary btn-lg d-flex align-items-center justify-content-center mx-2"
+                    style="background-color: #ffedd3; width: 60px; height: 60px; padding: 0; border-radius: 50%">
+                    <i class="fab fa-instagram" style="color: black; font-size: 1.5rem;"></i>
                 </button>
-                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2"
-                    style="background-color: #ffedd3;">
-                    <i class="fab fa-x" style="color: black"></i>
+
+                <button type="button"
+                    class="btn btn-primary btn-lg d-flex align-items-center justify-content-center mx-2"
+                    style="background-color: #ffedd3; width: 60px; height: 60px; padding: 0; border-radius: 50%">
+                    <i class="fab fa-x" style="color: black; font-size: 1.5rem;"></i>
                 </button>
+
             </div>
 
             <!-- Copyright -->
