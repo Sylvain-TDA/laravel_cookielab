@@ -18,7 +18,7 @@
         <div class="container-fluid justify-content-center justify-content-md-between">
             <div class="d-flex my-2 my-sm-0">
                 <a class="navbar-brand me-2 mb-1 d-flex justify-content-center" href="#">
-                    <img src="images/logo.png" height="150" alt="" loading="lazy" />
+                    <img src="images/logo.png" height="100" alt="" loading="lazy" />
                 </a>
 
                 <!-- Search form -->
