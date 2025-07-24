@@ -44,7 +44,7 @@
 
             <!-- cart + badge -->
             <li class="nav-item me-3 me-lg-2">
-                <a class="nav-link" href="{{ route('panier') }}">
+                <a class="nav-link" href="{{ route('basket') }}">
                     <span><i class="fas fa-shopping-cart"></i></span>
                     <span class="badge rounded-pill badge-notification bg-danger">1</span>
                 </a>
