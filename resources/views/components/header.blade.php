@@ -8,6 +8,7 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <title>{{ $title ?? "Cookie Lab'" }}</title>
 </head>
 
@@ -17,7 +18,7 @@
         <div class="container-fluid justify-content-center justify-content-md-between">
             <div class="d-flex my-2 my-sm-0">
                 <a class="navbar-brand me-2 mb-1 d-flex justify-content-center" href="#">
-                    <img src="images/Cookie picture.png" height="150" alt="" loading="lazy" />
+                    <img src="images/logo.png" height="150" alt="" loading="lazy" />
                 </a>
 
                 <!-- Search form -->
