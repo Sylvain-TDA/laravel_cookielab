@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\AddToCart;
+use App\Http\Controllers\BasketController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\bandeaupromotions;
 
 Route::get('/', function () {
     return view('welcome'); 
@@ -15,6 +14,4 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');  
 
-Route::get('/panier', function () {
-    return view('basket');
-})->name('panier');  
+Route::get('/basket', })-> [BasketController::class, 'show'])->name('basket');
