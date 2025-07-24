@@ -205,17 +205,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="dropdown flex-grow-1">
-                                        <button class="btn dropdown-toggle text-light" style="background-color: #B66E00;" type="button"
-                                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Choix du transporteur
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button">Colissimo</button>
-                                            <button class="dropdown-item" type="button">DHL</button>
-                                            <button class="dropdown-item" type="button">DPD</button>
-                                        </div>
-                                    </div> -->
                     <div class="card rounded-3 mb-4">
                         <div class="card-body p-4">
                             <h5 class="fw-normal mb-2" style="color: #B66E00">Merci de choisir votre mode de livraison</h5>
