@@ -1,4 +1,4 @@
-<div style="position:relative;min-height:35vh;">
+<div style="position:relative;min-height:40vh;">
     <div style="padding-bottom: 2.5rem;">
         <footer class="text-center text-lg-start"
             style="background-color: rgba(182, 110, 0, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); position:absolute; bottom:0; width: 100%;">
