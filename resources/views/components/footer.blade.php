@@ -1,4 +1,5 @@
-<footer class="text-center text-lg-start" style="background-color: #B66E00;">
+<footer class="text-center text-lg-start"
+    style="background-color: rgba(182, 110, 0, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
     <div class="container d-flex justify-content-center py-5">
         <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #ffedd3;">
             <i class="fab fa-facebook-f" style="color: black"></i>
