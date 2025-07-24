@@ -153,8 +153,8 @@
                                 <label class="form-label" for="form1">Code promo</label>
                             </div>
                             <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                class="btn btn-outline-warning btn-lg ms-3"
-                                style="background-color: #B66E00; color: white; border-color : white;">Appliquer</button>
+                                class="btn btn-outline-warning btn-sm ms-2"
+                                style="background-color: #FFEDD3; color:#B66E00 ; border-color : white;">Appliquer</button>
                         </div>
                     </div>
 
@@ -166,46 +166,107 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="card rounded-3 mb-4">
+                        <div class="card-body p-4">
+                                   <h5 class="fw-normal mb-2" style="color: #B66E00">Vous aimeriez peut être :</h5>
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                    <img src="images/kit.png" class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3">
+                                    <p class="lead fw-normal mb-2">Kit cookies</p>
+                                    <p>Description de nos kits cookies super trop cool</p>
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                    <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                          <div class="card-body p-4">
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                    <img src="images/kit.png" class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-3">
+                                    <p class="lead fw-normal mb-2">Kit cookies</p>
+                                    <p>Description de nos kits cookies super trop cool</p>
+                                </div>
+                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                    <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown flex-grow-1">
+                        <button class="btn dropdown-toggle text-light" style="background-color: #B66E00;" type="button"
+                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                            Choix du transporteur
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button">Colissimo</button>
+                            <button class="dropdown-item" type="button">DHL</button>
+                            <button class="dropdown-item" type="button">DPD</button>
+                        </div>
+                    </div>
+
                     <div class="d-flex justify-content-end">
                         <button type="button" data-mdb-button-init data-mdb-ripple-init
                             class="btn btn-warning btn-block btn-lg my-3"
                             style="background-color: #B66E00; color: white; border-color : white;">Paiement</button>
                     </div>
-                    <div class="card mb-3">
-                        <div class="card-body p-4 d-flex flex-row">DJ</div>
-                    </div>
+
 
                 </div>
             </div>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"></script>
     </section>
 
     <!-- <h1 style="color: #B66E00 ; margin : 16px">Mon panier</h1>
-                <div class="d-flex flex-row align-items-center p-3 border">
-                    <div class="me-3">
-                        <img src="/images/kit.png" alt="kit de cookies" style="width: 100px; height: auto;">
-                    </div>
+                                <div class="d-flex flex-row align-items-center p-3 border">
+                                    <div class="me-3">
+                                        <img src="/images/kit.png" alt="kit de cookies" style="width: 100px; height: auto;">
+                                    </div>
 
-                    <div class="d-flex flex-column flex-fill">
-                        <div class="fw-bold">Nom du cookie</div>
-                        <div class="text-muted">Description du cookie</div>
-                    </div>
+                                    <div class="d-flex flex-column flex-fill">
+                                        <div class="fw-bold">Nom du cookie</div>
+                                        <div class="text-muted">Description du cookie</div>
+                                    </div>
 
-                    <div class="ms-3 text-end">
-                        <span class="fw-bold">19,99 €</span>
-                    </div>
-                </div>
-                    <div class="d-flex flex-row align-items-center p-3 border">
-                    <div class="me-3">
-                        <img src="/images/kit.png" alt="kit de cookies" style="width: 100px; height: auto;">
-                    </div>
+                                    <div class="ms-3 text-end">
+                                        <span class="fw-bold">19,99 €</span>
+                                    </div>
+                                </div>
+                                    <div class="d-flex flex-row align-items-center p-3 border">
+                                    <div class="me-3">
+                                        <img src="/images/kit.png" alt="kit de cookies" style="width: 100px; height: auto;">
+                                    </div>
 
-                    <div class="d-flex flex-column flex-fill">
-                        <div class="fw-bold">Nom du cookie</div>
-                        <div class="text-muted">Description du cookie</div>
-                    </div>
+                                    <div class="d-flex flex-column flex-fill">
+                                        <div class="fw-bold">Nom du cookie</div>
+                                        <div class="text-muted">Description du cookie</div>
+                                    </div>
 
-                    <div class="ms-3 text-end">
-                        <span class="fw-bold">19,99 €</span>
-                    </div> -->
+                                    <div class="ms-3 text-end">
+                                        <span class="fw-bold">19,99 €</span>
+                                    </div> -->
 @endsection
