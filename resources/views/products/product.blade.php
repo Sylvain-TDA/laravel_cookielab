@@ -1,4 +1,4 @@
-<x-header /> <!-- Pour injecter le header -->
+<x-header />
 <main class="container my-4">
     <x-breadcrumb :items="$breadcrumbs ?? []" />
     @section('title', 'Nos Produits')
@@ -38,8 +38,5 @@
     </div>
 </div>
 </main>
-
-<x-footer /> <!-- Pour injecter le footer -->
-</body>
-
+<x-footer />
 </html>
