@@ -5,13 +5,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\bandeaupromotions;
 
 Route::get('/', function () {
-    return view('welcome');  // Charge resources/views/welcome.blade.php
+    return view('welcome'); 
 })->name('accueil');
 
 Route::get('/catalogue', function () {
     return view('catalogue');
-})->name('catalogue');  // Nom : 'catalogue'
-
+})->name('catalogue');  
 Route::get('/contact', function () {
     return view('contact');
-})->name('contact');  // Nom : 'contact'
+})->name('contact');  
+
+Route::get('/panier', function () {
+    return view('basket');
+})->name('panier');  
