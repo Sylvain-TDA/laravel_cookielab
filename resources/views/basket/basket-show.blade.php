@@ -181,13 +181,10 @@
                                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                     <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
                                         onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
+                                                  </button>
 
                                 </div>
-                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                                </div>
+                       
                             </div>
                         </div>
                           <div class="card-body p-4">
@@ -202,13 +199,8 @@
                                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                     <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
                                         onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                        <i class="fas fa-minus"></i>
                                     </button>
-
-                                </div>
-                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                    <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                                </div>
+                                </div>                          
                             </div>
                         </div>
                     </div>
@@ -235,38 +227,5 @@
                 </div>
             </div>
         </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-            crossorigin="anonymous"></script>
     </section>
-
-    <!-- <h1 style="color: #B66E00 ; margin : 16px">Mon panier</h1>
-                                <div class="d-flex flex-row align-items-center p-3 border">
-                                    <div class="me-3">
-                                        <img src="/images/kit.png" alt="kit de cookies" style="width: 100px; height: auto;">
-                                    </div>
-
-                                    <div class="d-flex flex-column flex-fill">
-                                        <div class="fw-bold">Nom du cookie</div>
-                                        <div class="text-muted">Description du cookie</div>
-                                    </div>
-
-                                    <div class="ms-3 text-end">
-                                        <span class="fw-bold">19,99 €</span>
-                                    </div>
-                                </div>
-                                    <div class="d-flex flex-row align-items-center p-3 border">
-                                    <div class="me-3">
-                                        <img src="/images/kit.png" alt="kit de cookies" style="width: 100px; height: auto;">
-                                    </div>
-
-                                    <div class="d-flex flex-column flex-fill">
-                                        <div class="fw-bold">Nom du cookie</div>
-                                        <div class="text-muted">Description du cookie</div>
-                                    </div>
-
-                                    <div class="ms-3 text-end">
-                                        <span class="fw-bold">19,99 €</span>
-                                    </div> -->
 @endsection
