@@ -21,8 +21,6 @@
         © 2025 Copyright:
         <a class="text-white" href="">CookieLab.com</a>
     </div>
-    <!-- Copyright -->
 </footer>
 
 
-<!-- End of .container -->
