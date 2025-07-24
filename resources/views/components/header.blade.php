@@ -22,28 +22,25 @@
 
 
             <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link" href="#" role="button" data-mdb-toggle="sidenav" data-mdb-target="#sidenav-1"
-                    class="btn shadow-0 p-0 me-3" aria-controls="#sidenav-1" aria-haspopup="true">
+                <a class="nav-link" href="{{ route('accueil') }}">
                     <i class="fas fa-bars me-1"></i>
                     <span>Accueil</span>
                 </a>
             </li>
 
-
             <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('catalogue') }}">
                     <span class="d-none d-lg-inline-block">Catalogue</span>
                     <i class="fas fa-envelope d-inline-block d-lg-none"></i>
                 </a>
             </li>
 
             <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('contact') }}">
                     <span class="d-none d-lg-inline-block">Contact</span>
                     <i class="fas fa-envelope d-inline-block d-lg-none"></i>
                 </a>
             </li>
-
 
             <!-- cart + badge -->
             <li class="nav-item me-3 me-lg-2">
