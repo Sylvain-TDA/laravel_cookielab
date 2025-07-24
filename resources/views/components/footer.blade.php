@@ -1,5 +1,3 @@
-
-
 <footer class="text-center text-lg-start" style="background-color: #B66E00;">
     <div class="container d-flex justify-content-center py-5">
         <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #ffedd3;">
@@ -23,4 +21,9 @@
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.js"></script>
 
+</body>
+
+</html>
