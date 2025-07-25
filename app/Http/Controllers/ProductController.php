@@ -11,22 +11,22 @@ class ProductController extends Controller
     {
         $products = collect([
             (object)[
+                'id' => 0,
+                'name' => 'Super dupper cookie',
+                'price' => 2.50,
+                'description' => 'Un cookie au chocolat noir avec des éclats de caramel.'
+            ],
+            (object)[
                 'id' => 1,
-                'name' => 'iPhone 15',
-                'price' => 999.99,
-                'description' => 'Le dernier smartphone d\'Apple avec une caméra révolutionnaire et des performances exceptionnelles.'
+                'name' => 'Cookie aux pépites de chocolat',
+                'price' => 1.99,
+                'description' => 'Un cookie moelleux avec des pépites de chocolat fondant.'
             ],
             (object)[
                 'id' => 2,
-                'name' => 'Samsung Galaxy S24',
-                'price' => 899.99,
-                'description' => 'Smartphone Android haut de gamme avec écran AMOLED et intelligence artificielle intégrée.'
-            ],
-            (object)[
-                'id' => 3,
-                'name' => 'Google Pixel 8',
-                'price' => 799.99,
-                'description' => 'Le meilleur de Google dans un smartphone, avec une photographie assistée par IA.'
+                'name' => 'Cookie à la vanille',
+                'price' => 3.49,
+                'description' => 'Un cookie à la vanille avec une texture crémeuse et des éclats de caramel.'
             ]
         ]);
 
@@ -43,22 +43,22 @@ class ProductController extends Controller
     {
         $products = collect([
             (object)[
+                'id' => 0,
+                'name' => 'Super dupper cookie',
+                'price' => 2.50,
+                'description' => 'Un cookie au chocolat noir avec des éclats de caramel.'
+            ],
+            (object)[
                 'id' => 1,
-                'name' => 'iPhone 15',
-                'price' => 999.99,
-                'description' => 'Le dernier smartphone d\'Apple avec une caméra révolutionnaire et des performances exceptionnelles.'
+                'name' => 'Cookie aux pépites de chocolat',
+                'price' => 1.99,
+                'description' => 'Un cookie moelleux avec des pépites de chocolat fondant.'
             ],
             (object)[
                 'id' => 2,
-                'name' => 'Samsung Galaxy S24',
-                'price' => 899.99,
-                'description' => 'Smartphone Android haut de gamme avec écran AMOLED et intelligence artificielle intégrée.'
-            ],
-            (object)[
-                'id' => 3,
-                'name' => 'Google Pixel 8',
-                'price' => 799.99,
-                'description' => 'Le meilleur de Google dans un smartphone, avec une photographie assistée par IA.'
+                'name' => 'Cookie à la vanille',
+                'price' => 3.49,
+                'description' => 'Un cookie à la vanille avec une texture crémeuse et des éclats de caramel.'
             ]
         ]);
 

@@ -4,10 +4,6 @@ use App\Http\Controllers\BasketController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/page-produit',[App\Http\Controllers\PageProduit::class, 'show'])->name('page-produit');
-
-
-
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('catalogue');
 
 Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('products.show');
