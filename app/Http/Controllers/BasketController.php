@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class BasketController extends Controller
 {
     public function show (): View {
-        return view('basket.basket-show');
+        return view('components.basket-show');
     }
 }

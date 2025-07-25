@@ -1,4 +1,4 @@
-@extends('layouts.basket')
+@extends('Layout.basket')
 @section('basket-content')
 
 
