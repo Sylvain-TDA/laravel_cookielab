@@ -6,8 +6,16 @@
 @source '../**/*.js';
 
 
-.titre-special {
+.titre-special,
+p {
     font-family: "Grandstander", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.league-gothic {
+    font-family: "League Gothic", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;

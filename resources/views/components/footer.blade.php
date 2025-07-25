@@ -30,9 +30,9 @@
             </div>
 
             <!-- Copyright -->
-            <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div class="text-center text-white p-3 league-gothic" style="background-color: rgba(0, 0, 0, 0.2);">
                 © 2025 Copyright:
-                <a class="text-white" href="">CookieLab.com</a>
+                <a class="text-white league-gothic" href="">CookieLab.com</a>
             </div>
         </footer>
     </div>

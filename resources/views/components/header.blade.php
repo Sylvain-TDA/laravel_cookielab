@@ -15,7 +15,7 @@
     @vite('resources/css/app.scss')
 
 
-    <link rel="icon" type="image/png" href="images/logo.png">
+
     <title>{{ $title ?? "Cookie Lab'" }}</title>
 </head>
 
@@ -26,11 +26,11 @@
         <div class="container-fluid justify-content-center justify-content-md-between">
             <div class="d-flex my-2 my-sm-0">
                 <a class="navbar-brand me-2 mb-1 d-flex justify-content-center" href="" {{ route('accueil') }}"">
-                    <img src="images/logo.png" height="100" alt="" loading="lazy" />
+                    <img src="images/logo.png" height="100" alt="logo cookie lab'" loading="lazy" />
                 </a>
 
                 <!-- Search form -->
-                <form class="d-flex input-group w-auto my-auto">
+                <form class="d-flex input-group w-auto my-auto league-gothic">
                     <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search"
                         style="min-width: 125px; background-color: #ffedd3;" />
                     <span class="input-group-text border-0 d-none d-md-flex fs-4"><i class="fas fa-search"></i></span>
@@ -42,20 +42,20 @@
 
 
 
-                <li class="nav-item me-3 me-lg-0">
+                <li class="nav-item me-3 me-lg-0 league-gothic">
                     <a class="nav-link" href="{{ route('accueil') }}">
                         <i class="fas fa-bars me-1"></i>
                         <span>Accueil</span>
                     </a>
                 </li>
 
-                <li class="nav-item me-3 me-lg-0">
+                <li class="nav-item me-3 me-lg-0 league-gothic">
                     <a class="nav-link" href="{{ route('catalogue') }}">
                         <span class="d-none d-lg-inline-block">Catalogue</span>
                     </a>
                 </li>
 
-                <li class="nav-item me-3 me-lg-0">
+                <li class="nav-item me-3 me-lg-0 league-gothic">
                     <a class="nav-link" href="{{ route('contact') }}">
                         <span class="d-none d-lg-inline-block">Contact</span>
                     </a>
