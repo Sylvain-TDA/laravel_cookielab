@@ -23,7 +23,7 @@
         style="background-color: rgba(182, 110, 0, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
         <div class="container-fluid justify-content-center justify-content-md-between">
             <div class="d-flex my-2 my-sm-0">
-                <a class="navbar-brand me-2 mb-1 d-flex justify-content-center" href="" {{ route('accueil') }}"">
+                <a class="navbar-brand me-2 mb-1 d-flex justify-content-center" href="{{ route('accueil') }}">
                     <img src="/images/logo.png" height="100" alt="logo cookie lab'" loading="lazy" />
                 </a>
 
@@ -37,13 +37,10 @@
 
             <ul class="navbar-nav flex-row fs-4">
 
-
-
-
                 <li class="nav-item me-3 me-lg-0 league-gothic">
                     <a class="nav-link" href="{{ route('accueil') }}">
                         <i class="fas fa-bars me-1"></i>
-                        <span>Accueil</span>
+                        <span class="d-none d-lg-inline-block">Accueil</span>
                     </a>
                 </li>
 
