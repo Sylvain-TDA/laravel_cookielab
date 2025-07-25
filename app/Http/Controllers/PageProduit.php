@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 
 use App\models\User;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
-
+use Illuminate\Contracts\View\View;
 class PageProduit extends Controller
 {
 
@@ -14,4 +13,6 @@ class PageProduit extends Controller
     {
         return view('page-produit');
     }
+
+
 }

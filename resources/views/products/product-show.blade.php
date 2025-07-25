@@ -1,22 +1,24 @@
-<!DOCTYPE html>
-<html>
-
-<body>
     <x-header /> <!-- Pour injecter le header -->
-<main class="container my-4">
+<main class="container my-1">
+@vite('resources/js/app.js')
 <x-breadcrumb :items="$breadcrumbs ?? []" />
-     @yield('content')
+     
  
     <div class="d-flex">
-    <img src="public/images/cookie.png" class="img-fluid" alt="Responsive image">
+    <img src="/images/cookie.png" width="auto" height="400px" alt="Responsive image"/>
     <div>
-        <h1 style = "background-color: #E5AB69">Super dupper cookie</h1>
+        <h1 class = "p-1 m-20" style = "background-color: #E5AB69">Super dupper cookie</h1>
+        
+        <br>
         <h2>Dark chocolate</h2>
-            <h3 style = "background-color: #E5AB69">
+        <br>
+
+            <h3 class = "p-1 m-20" style = "background-color: #E5AB69" width = "50">
                 A wonderfull baked cookie full of melty chocolate, Made with the best 
-                selection of floor and chocolate.  
+                selection of floor and chocolate.  <br>
                 This crunchy cookie with light taste of vanilla and darker chocolate than Trump policy 
-                will make you forget about those of your grand-mother.   Enjoy, folks !
+                will make you forget about those of your grand-mother.<br><br><br>
+                   Enjoy, folks !
             </h3>
     </div>
 
@@ -27,6 +29,3 @@
 
 
 
-</body>
-
-</html>
