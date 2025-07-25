@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\PageProduit;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/page-produit',[App\Http\Controllers\PageProduit::class, 'show'])->name('page-produit');
+
+//Route::get('/page-produit/{id}',[App\Http\Controllers\PageProduit::class, 'show'])->name('page-produit');
 
 Route::get('/', function () {
     return view('welcome'); 
