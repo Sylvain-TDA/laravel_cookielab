@@ -50,11 +50,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item me-3 me-lg-0 league-gothic">
-                    <a class="nav-link" href="{{ route('contact') }}">
-                        <span class="d-none d-lg-inline-block">Contact</span>
-                    </a>
-                </li>
 
                 <!-- cart + badge -->
                 <li class="nav-item me-3 me-lg-2">
