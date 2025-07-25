@@ -26,8 +26,8 @@
                 <button class="dropdown-item" type="button">Autre</button>
             </div>
         </div> -->
-        <div class="p-2 flex-grow-1">Livraison gratuite dès 60€ d'achat</div>
-        <div class="p-2 flex-grow-1">-5% avec le code MONSTAH</div>
+        <div class="p-2 flex-grow-1 titre-special">Livraison gratuite dès 60€ d'achat</div>
+        <div class="p-2 flex-grow-1 titre-special">-5% avec le code MONSTAH</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"

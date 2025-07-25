@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <button class="btn text-white" style="background-color: #B66E00; border-radius: 16px;">Ajouter au panier</button>
+    <button class="btn text-white titre-special" style="background-color: #B66E00; border-radius: 16px;">Ajouter au
+        panier</button>
 </body>
 
 </html>
