@@ -14,8 +14,6 @@
         rel="stylesheet">
     @vite('resources/css/app.scss')
 
-
-
     <title>{{ $title ?? "Cookie Lab'" }}</title>
 </head>
 
