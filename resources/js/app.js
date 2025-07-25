@@ -36,3 +36,26 @@ document.querySelectorAll('.delivery-option').forEach(input => {
         document.getElementById('delivery-price').textContent = `${price}€`;
     });
 });
+
+
+let id = null;
+let angle = 0;
+var pos = 0;
+
+function myMove() {
+    const img = document.getElementById("myAnimation");
+    clearInterval(id);
+
+    id = setInterval(() => {
+        angle = (angle + 5) % 360;
+
+        if (pos <= 142) {
+            img.style.left = pos + 'px';
+            img.style.transform = `rotate(${angle}deg)`;
+            pos++;
+        }
+    }, 15);
+    pos=0;
+}
+
+window.myMove = myMove;

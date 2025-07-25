@@ -220,11 +220,11 @@
                                 DPD
                             </label>
                         </div>
-                        
+
                     </div>
                     <div class="m-4" onclick="this.parentNode.querySelector('input[type=radio]')">Prix : <span
-                                id="delivery-price">0.00€</span>
-                        </div>
+                            id="delivery-price">0.00€</span>
+                    </div>
                 </div>
 
 
@@ -238,5 +238,14 @@
             </div>
         </div>
         </div>
+
+        <p>
+            <button onclick="myMove()">Click Me</button>
+        </p>
+
+<div id="myContainer">
+    <img id="myAnimation" src="images/logo.png" height="100" alt="logo" />
+</div>
+
     </section>
 @endsection
