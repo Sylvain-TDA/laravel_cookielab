@@ -12,17 +12,24 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
+
+        $products = [];
         $category_id = DB::table('categories')->pluck('id')->toArray();
 
-        DB::table('products')->insert([
-            'category_id' => fake()->randomElement($category_id),
-            'name' => fake()->lastName(),
-            'description' => fake()->sentence(),
-            'price' => fake()->randomFloat(2, 1.50, 100),
-            'url_image' => 'https://maison-kayser.com/wp-content/uploads/2024/07/Cookies-au-chocolat-noir.jpg?x25603',
+        for ($i = 0; $i < 20; $i++) {
+            $products[] = [
+                'category_id' => fake()->randomElement($category_id),
+                'name' => fake()->lastName(),
+                'description' => fake()->sentence(),
+                'url_image' => 'https://maison-kayser.com/wp-content/uploads/2024/07/Cookies-au-chocolat-noir.jpg?x25603',
             'weight' => fake()->randomFloat(2, 50, 2000),
             'stock' => fake()->numberBetween(0, 50),
-            'is_available' => fake()->boolean()
-        ]);
+            'is_available' => fake()->boolean(),
+            'price' => fake()->randomFloat(2, 1.50, 100),
+        ];
+    }
+
+        DB::table('products')->insert($products);
     }
 }
+

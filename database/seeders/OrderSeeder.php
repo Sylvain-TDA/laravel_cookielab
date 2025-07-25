@@ -12,11 +12,14 @@ class OrderSeeder extends Seeder
      */
     public function run(): void
     {
-         { {
-            DB::table('products')->insert([
+
+        $orders = [];
+        for ($i = 0; $i < 10; $i++) {
+            $orders[] = [
                 'total_amount' => fake()->randomNumber(3),
-            ]);
+            ];
         }
-    }
+        DB::table('orders')->insert($orders);
     }
 }
+

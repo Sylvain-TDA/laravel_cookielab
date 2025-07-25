@@ -12,9 +12,13 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categories')->insert([
-            'name' => fake()->firstName(),
-        ]);
+        $categories = [];
+        for ($i = 0; $i < 2; $i++) {
+            $categories[] = [
+                'name' => fake()->word(),
+            ];
+        }
+        DB::table('categories')->insert($categories);
     }
 
 
