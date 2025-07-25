@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/page-produit',[App\Http\Controllers\PageProduit::class, 'show'])->name('page-produit');
 
-Route::get('/', function () {
-    return view('welcome'); 
-})->name('accueil');
+
 
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('catalogue');
 
@@ -19,3 +17,7 @@ Route::get('/contact', function () {
 })->name('contact');  
 
 Route::get('/basket', [BasketController::class, 'show'])->name('basket');
+
+
+
+Route::get('/', [App\Http\Controllers\HomePageController::class, 'show'])->name('accueil');
