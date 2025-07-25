@@ -4,6 +4,8 @@ use App\Http\Controllers\BasketController;
 use Illuminate\Support\Facades\Route;
 
 
+Route::get('/page-produit',[App\Http\Controllers\PageProduit::class, 'show'])->name('page-produit');
+
 Route::get('/', function () {
     return view('welcome'); 
 })->name('accueil');
