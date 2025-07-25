@@ -13,7 +13,7 @@ class DiscountCodeSeeder extends Seeder
     public function run(): void
     { {
             DB::table('products')->insert([
-                'name' => fake()->name(),
+                'name' => fake()->firstName(),
                 'discount_percentage' => fake()->randomBetwen(0, 100),
                 'discount-fix' => fake()->randomNumber(3),
             ]);
