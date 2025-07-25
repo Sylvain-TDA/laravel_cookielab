@@ -13,10 +13,10 @@ class DeliverySeeder extends Seeder
     public function run(): void
     { {
             DB::table('products')->insert([
-                'name' => fake()->name(),
+                'name' => fake()->lastName(),
                 'price' => fake()->randomNumber(2),
             ]);
         }
     }
-    
+
 }
