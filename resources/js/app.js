@@ -29,3 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updatePrice(input);
     });
 });
+
+document.querySelectorAll('.delivery-option').forEach(input => {
+    input.addEventListener('change', () => {
+        const price = parseFloat(input.dataset.price).toFixed(2);
+        document.getElementById('delivery-price').textContent = `${price}€`;
+    });
+});
