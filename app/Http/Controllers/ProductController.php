@@ -77,3 +77,5 @@ class ProductController extends Controller
         return view('products.product-show', compact('product', 'breadcrumbs'));
     }
 }
+
+
