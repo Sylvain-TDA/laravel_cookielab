@@ -17,8 +17,8 @@ class DiscountCodeSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             $discountCodes[] = [
                 'code' => fake()->word(),
-                'discount_percentage' => fake()->randomBetwen(0, 100),
-                'discount-fix' => fake()->randomNumber(3),
+                'discount_percentage' => fake()->randomElement([0, 100]),
+                'discount_fix' => fake()->randomNumber(3),
                 'valid_from' => now()->subDays(rand(1, 30)),
                 'valid_until' => now()->addDays(rand(1, 30)),
                 'is_active' => fake()->boolean(),

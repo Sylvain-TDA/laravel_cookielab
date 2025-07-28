@@ -11,7 +11,7 @@ class Delivery extends Model
     protected $primaryKey = "id";
 
     protected $fillable = [
-        'name','price'
+        'name','cost'
     ];
 
     protected $guarder = ['id'];
