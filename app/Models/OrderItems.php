@@ -7,18 +7,32 @@ use Illuminate\Database\Eloquent\Model;
 class OrderItems extends Model
 {
     protected $table = 'order_items';
+
+    protected $primaryKey = 'id';
+
+    /** Attributs remplissables */
     protected $fillable = [
-        'id',
         'order_id',
         'product_id',
         'quantity',
     ];
-    /** public function order()
-    *{
-    *    return $this->belongsTo(Order::class);
-    *}
-    *public function product()
-    *{
-    *    return $this->belongsTo(Product::class);
-   * } */
+
+    /** Cast automatique des types */
+    protected $casts = [
+        'quantity' => 'integer',
+    ];
+
+    protected $guarded = ['id'];
+
+    /** Relation avec le model Order */
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
+    /** Relation avec le model Product */
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
