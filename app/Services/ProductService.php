@@ -1,21 +1,16 @@
 <?php
 
 namespace App\Services;
+use Illuminate\Support\Facades\DB;
 
 class ProductService{
 
-
-protected function getProducts(){
-
-  return Product::all(); 
+    public function getProducts(){
+        $products = DB::table('products')
+                     ->select('name', 'description', 'price', 'url_image')
+                     ->get();
+        
+        return $products;
+    }
   
-    // logique récupération des produits
-
-
 }
-
-
-
-}
-
-

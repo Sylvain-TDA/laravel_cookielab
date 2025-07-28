@@ -15,29 +15,18 @@ class HomePageController extends Controller
 
    
 
-    protected function __construct(ProductService $productService)
+    public function __construct(ProductService $productService)
         {
         
             $this->productService = $productService; 
         }
 
-protected function index(){
+public function show(){
 
    $products = $this->productService->getProducts();
    return view('welcome', compact('products'));
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 }

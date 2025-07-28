@@ -8,6 +8,7 @@
             <h2>{{ $product->name }}</h2>
             <p>{{ $product->description }}</p>
             <p>Prix: {{ $product->price }} €</p>
+            <img src="{{ $product->url_image }}" alt="{{ $product->name }}">
         </div>
     @endforeach
 
