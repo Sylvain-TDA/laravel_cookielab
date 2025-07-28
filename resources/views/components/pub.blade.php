@@ -5,7 +5,7 @@
         <div class="container d-flex align-items-center justify-content-center text-center h-100">
             <div class="text-white">
                 <h1 class="mb-3 titre-special text-white">🍪 Soldes 🍪</h1>
-                <h4 class="mb-4 titre-special">20% de réduction sur votre 1ère commande!</h4>
+                <h4 class="mb-4 titre-special">10% de réduction sur votre 1ère commande!</h4>
                 <a class="btn btn-outline-light btn-lg mb-3 titre-special" href="#!" role="button"> 🍪 Voir l'offre
                     promotionnelle 🍪
                 </a>
