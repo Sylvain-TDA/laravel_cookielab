@@ -1,4 +1,5 @@
     <x-header /> <!-- Pour injecter le header -->
+
 <main class="container">
 
  <x-breadcrumb :items="$breadcrumbs ?? []" />
@@ -13,10 +14,12 @@
             <h2>{{ $product->description_short }}</h2>
             <br>
 
-                <h3 class = "m-1 p-1" style = "background-color: #E5AB69">
-                    {{ $product->description_long }}
-                </h3>
-        </div>
+            <h3 class = "m-1 p-1" style = "background-color: #E5AB69">
+                   {{ $product->description_long }}
+            </h3>
+    </div>
+ 
+</div>
 
         <div div class="d-flex flex-row">
             <div> <!--Button lot-->
