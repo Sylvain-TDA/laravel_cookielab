@@ -35,9 +35,9 @@ class Product extends Model
 
     protected $guarded = ['id'];
 
-    public function orderItems()
+    public function orderItem()
     {
-        return $this->hasMany(OrderItems::class);
+        return $this->hasMany(OrderItem::class);
     }
 
     public function categories()
