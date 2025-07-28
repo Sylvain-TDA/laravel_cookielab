@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreign('customer_id')->references('id')->on('customers');
-            $table->foreign('discount_id')->references('id')->on('discount_codes')->nullable();
-            $table->foreign('delivery_mode_id')->references('id')->on('deliveries');
+            $table->foreignId('customer_id')->references('id')->on('customers');
+            $table->foreignId('discount_id')->references('id')->on('discount_codes')->nullable();
+            $table->foreignId('delivery_mode_id')->references('id')->on('deliveries');
             $table->decimal('total_amount', 6, 2);
             $table->timestamps();
         });

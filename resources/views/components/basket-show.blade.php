@@ -10,7 +10,7 @@
                 <div class="col-10">
 
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h3 class="fw-normal mb-0" style="color: #B66E00">Mon panier</h3>
+                        <h3 class="fw-normal mb-0" style="color: #B66E00cccc">Mon panier</h3>
                     </div>
 
                     <div class="card rounded-3 mb-4">
@@ -157,7 +157,7 @@
                             </div>
                             <button type="button" data-mdb-button-init data-mdb-ripple-init
                                 class="btn btn-outline-warning btn-sm ms-2"
-                                style="background-color: #FFEDD3; color:#B66E00 ; border-color : white;">Appliquer</button>
+                                style="background-color: #FFEDD3; color:#B66E00cc ; border-color : white;">Appliquer</button>
                         </div>
                     </div>
 
@@ -172,7 +172,7 @@
 
                     <div class="card rounded-3 mb-4">
                         <div class="card-body p-4">
-                            <h5 class="fw-normal mb-2" style="color: #B66E00">Vous aimeriez peut être :</h5>
+                            <h5 class="fw-normal mb-2" style="color: #B66E00cc">Vous aimeriez peut être :</h5>
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-md-2 col-lg-2 col-xl-2">
                                     <img src="images/kit.png" class="img-fluid rounded-3" alt="Kit cookies">
@@ -231,7 +231,7 @@
                 <div class="d-flex justify-content-end">
                     <button type="button" data-mdb-button-init data-mdb-ripple-init
                         class="btn btn-warning btn-block btn-lg my-3"
-                        style="background-color: #B66E00; color: white; border-color : white;">Paiement</button>
+                        style="background-color: #B66E00cccc; color: white; border-color : white;">Paiement</button>
                 </div>
 
 
