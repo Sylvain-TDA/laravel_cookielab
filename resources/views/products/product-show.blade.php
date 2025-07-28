@@ -24,28 +24,30 @@
         <div div class="d-flex flex-row">
             <div> <!--Button lot-->
                 <select>
-                        <option value="test 0"> Achat unique </option>
-                        <option value="test 1"> Lot de 2 </option>
-                        <option value="test 2" selected> Lot de 3 </option>
-                        <option value="test 3"> Lot de 4 </option>
-                        <option value="test 4"> Lot de 5 </option>
+                    @for($i = 1; $i <= 5; $i++)
+                        <option value="test"> Lot de {{$i}} </option>
+                    @endfor
                 </select>
                 </div>
 
                 <div class = "d-flex flex-row mx-3 px-0"> <!-- Button quantité -->
-                        <button class = "w-100 h-50">-</button>
-                        <h1> 1 </h1>
-                        <button class = "w-100 h-50">+</button>
-                </div>
+                <form action="{{ route('basketForm') }}" method="POST">
+                       @csrf <!-- Protection contre les attaques CSRF -->
+                        <label for="Number of cookies">Number of cookies</label>
+                        
+                        <label for="name">Nom du produit :</label>
+                        <input type="text" name="name" id="name">
 
-               
+                        <label for="price">Prix :</label>
+                        <input type="number" id="price" name="price" min="1" max="10"/>
+                            
+                        <button type ="submit" style = "width : 130px; height : 60px; background-color : rgba(255,0,255,255)">
+                        Validation de l'achat
+                        </button>   
+                    </form>
+                </div>               
             </div>
         </div>
-            <div> <!-- Button validation du panier -->
-                <button style = "width : 130px; height : 60px; background-color : rgba(255,0,255,255)">
-                Validation de l'achat
-                </button>    
-            </div>
     </div>
 </main>
 

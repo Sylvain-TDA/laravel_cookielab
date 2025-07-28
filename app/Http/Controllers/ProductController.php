@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    //
+
+
     public function index()
     {
+       
         $products = collect([
             (object)[
                 'id' => 0,
@@ -29,7 +32,7 @@ class ProductController extends Controller
                 'description' => 'Un cookie à la vanille avec une texture crémeuse et des éclats de caramel.'
             ]
         ]);
-
+         
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],
             ['title' => 'Produits', 'url' => '']
@@ -76,7 +79,13 @@ class ProductController extends Controller
                  will make you forget about those of your grand-mother. \r
                  Enjoy, folks !',
             ]
-        ]);
+            ]);
+
+
+
+   
+
+
 
         $product = $products->get($id);
         
@@ -90,6 +99,20 @@ class ProductController extends Controller
             ['title' => $product->name, 'url' => '']
         ];
 
+
         return view('products.product-show', compact('product', 'breadcrumbs'));
     }
+
+         public function store(Request $request)
+        {
+            $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',]);
+        
+            Product::create($validated);
+     
+            return redirect()->back()->with('success','produit ajouté !');
+        }
+
+
 }
