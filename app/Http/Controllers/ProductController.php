@@ -28,7 +28,7 @@ class ProductController extends Controller
     //
     public function show($id)
     {
-          $products = DB::select('select * from products');
+          $products = DB::select('select name, description, price, url_image from products');
 
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],

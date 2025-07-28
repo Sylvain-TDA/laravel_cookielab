@@ -140,7 +140,7 @@
                                     </button>
                                 </div>
                                 <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                    <h5 class="mb-0 total-price">39.98€</h5>
+                                    <h5 class="mb-0 total-price" id="prix4">39.98€</h5>
                                 </div>
                                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                                     <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
@@ -153,11 +153,12 @@
                         <div class="card-body p-4 d-flex flex-row">
                             <div data-mdb-input-init class="form-outline flex-fill">
                                 <input type="text" id="form1" class="form-control form-control-lg" />
-                                <label class="form-label" for="form1">Code promo</label>
+                                <label class="code-promo" for="form1">Code promo</label>
                             </div>
                             <button type="button" data-mdb-button-init data-mdb-ripple-init
                                 class="btn btn-outline-warning btn-sm ms-2"
-                                style="background-color: #FFEDD3; color:#B66E00cc ; border-color : white;">Appliquer</button>
+                                style="background-color: #FFEDD3; color:#B66E00cc ; border-color : white;"
+                                onclick="printCodePromo()">Appliquer</button>
                         </div>
                     </div>
 
@@ -220,11 +221,17 @@
                                 DPD
                             </label>
                         </div>
-                        
+
                     </div>
-                    <div class="m-4" onclick="this.parentNode.querySelector('input[type=radio]')">Prix : <span
-                                id="delivery-price">0.00€</span>
-                        </div>
+                    <div class="m-4" onclick="this.parentNode.querySelector('input[type=radio]')">Prix transport: <span
+                            id="delivery-price">0.00€</span>
+                    </div>
+                    
+                    <div class="print-code-promo">
+                    </div>
+
+                    <div class="m-4" onclick="sumBasket()">Prix total: <span id="total-price-basket">0.00€</span>
+                    </div>
                 </div>
 
 
