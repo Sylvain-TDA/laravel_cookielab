@@ -11,7 +11,7 @@
                 <h1 class="m-1 p-1" style=>{{ $product->name }}</h1>
 
                 <br>
-                <h2>{{ $product->description}}</h2>
+                <h2>{{$product->descriptionqsfqs}}</h2>
                 <br>
 
             </div>
