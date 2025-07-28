@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('discount_codes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('code');
             $table->decimal('discount_percentage', 4, 0);
             $table->decimal('discount_fixed', 5, 2);
+            $table->timestamp('valid_from')->nullable();
+            $table->timestamp('valid_until')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
