@@ -23,3 +23,8 @@ Choose yes
 ## Run
 
     composer run dev
+
+# BDD
+
+    php artisan migrate
+    php artisan db:seed

@@ -11,12 +11,9 @@
             <h1 class = "m-1 p-1" style = >{{ $product->name }}</h1>
             
             <br>
-            <h2>{{ $product->description_short }}</h2>
+            <h2>{{ $product->description}}</h2>
             <br>
-
-            <h3 class = "m-1 p-1" style = "">
-                   {{ $product->description_long }}
-            </h3>
+      
     </div>
  
 </div>

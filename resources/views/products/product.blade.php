@@ -15,7 +15,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">{{ $product->name }}</h5>
-                        <p class="card-text">{{ Str::limit($product->description, 100) }}</p>
+                        <p class="card-text">{{ $product->description }}</p>
                         <p class="card-text">
                             <strong class="">{{ number_format($product->price, 2) }}€</strong>
                         </p>
