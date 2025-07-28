@@ -66,8 +66,8 @@
 
                 <!-- Avatar -->
                 <li class="nav-item dropdown align-self-center">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
-                        role="button" data-mdb-dropdown-init aria-expanded="false">
+                    <a class="text-light nav-link dropdown-toggle d-flex align-items-center" href="#"
+                        id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
                         <i class="text-light fa-solid fa-circle-user fs-4"></i>
                     </a>
                     <ul class="text-light dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
