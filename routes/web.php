@@ -2,11 +2,14 @@
 
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\PageProduit;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
 
 //Route::get('/page-produit/{id}',[App\Http\Controllers\PageProduit::class, 'show'])->name('page-produit');
+
+Route::post('/products',[ProductController::class,'store'])->name('basketForm');//name is not good
 
 Route::get('/', function () {
     return view('welcome'); 
