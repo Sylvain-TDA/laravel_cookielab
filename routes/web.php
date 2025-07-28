@@ -25,6 +25,6 @@ Route::get('/contact', function () {
 
 Route::get('/basket', [BasketController::class, 'show'])->name('basket');
 
-
-
 Route::get('/', [App\Http\Controllers\HomePageController::class, 'show'])->name('accueil');
+
+Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('search');
