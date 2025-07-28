@@ -28,12 +28,20 @@
                 </a>
 
                 <!-- Search form -->
-                <form class="d-flex input-group w-auto my-auto league-gothic">
-                    <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search"
+
+                <form class="d-flex input-group w-auto my-auto league-gothic" action="{{ route('search') }}"
+                    method="GET">
+
+                    <input autocomplete="off" type="search" name="search" value="{{ request('search') }}"
+                        class="form-control rounded" placeholder="Search"
                         style="min-width: 125px; background-color: #ffedd3;" />
-                    <span class="text-light input-group-text border-0 d-none d-md-flex fs-4"><i
-                            class="fas fa-search"></i></span>
+
+                    <button type="submit" class="text-light input-group-text border-0 d-none d-md-flex fs-4"
+                        style="background: transparent; border: none;">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </form>
+
             </div>
 
             <ul class="navbar-nav flex-row fs-4">
