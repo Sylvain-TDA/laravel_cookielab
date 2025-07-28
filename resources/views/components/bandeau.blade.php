@@ -13,7 +13,7 @@
 
     <div class="d-flex flex-row flex-fill justify-content-center mb-3" style="background-color: #F0E2CC;">
         <!-- <div class="dropdown flex-grow-1">
-            <button class="btn dropdown-toggle text-light" style="background-color: #B66E00;"
+            <button class="btn dropdown-toggle text-light" style="background-color: #B66E00cc;"
             type="button"
             id="dropdownMenu2"
             data-bs-toggle="dropdown"

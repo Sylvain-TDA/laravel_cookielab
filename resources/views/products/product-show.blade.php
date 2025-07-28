@@ -8,13 +8,13 @@
         <div class="d-flex">
         <img src="/images/cookie.png" width="600px" height="auto" alt="Responsive image"/>
         <div>
-            <h1 class = "m-1 p-1" style = "background-color: #B66E00">{{ $product->name }}</h1>
+            <h1 class = "m-1 p-1" style = >{{ $product->name }}</h1>
             
             <br>
             <h2>{{ $product->description_short }}</h2>
             <br>
 
-            <h3 class = "m-1 p-1" style = "background-color: #B66E00">
+            <h3 class = "m-1 p-1" style = "">
                    {{ $product->description_long }}
             </h3>
     </div>
@@ -32,17 +32,20 @@
                 </select>
                 </div>
 
-                <div> <!-- Button quantité -->
-                        <button>-</button>
+                <div class = "d-flex flex-row mx-3 px-0"> <!-- Button quantité -->
+                        <button class = "w-100 h-50">-</button>
                         <h1> 1 </h1>
-                        <button>+</button>
+                        <button class = "w-100 h-50">+</button>
                 </div>
 
-                <div> <!-- Button validation du panier -->
-                
-                </div>
+               
             </div>
         </div>
+            <div> <!-- Button validation du panier -->
+                <button style = "width : 130px; height : 60px; background-color : rgba(255,0,255,255)">
+                Validation de l'achat
+                </button>    
+            </div>
     </div>
 </main>
 

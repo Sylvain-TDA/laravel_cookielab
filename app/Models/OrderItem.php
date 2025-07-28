@@ -12,8 +12,6 @@ class OrderItem extends Model
 
     /** Attributs remplissables */
     protected $fillable = [
-        'order_id',
-        'product_id',
         'quantity',
     ];
 
