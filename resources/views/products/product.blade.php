@@ -21,7 +21,7 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ route('products.show', $product->id) }}" class="btn text-light" style="background-color: #B66E00">
+                        <a href="{{ route('products.show', $product->id) }}" class="btn text-light" style="background-color: #B66E00cc">
                             Voir le détail
                         </a>
                     </div>

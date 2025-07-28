@@ -22,10 +22,10 @@ class Product extends Model
         'name',
         'description',
         'price',
-        'urlPic',
+        'url_image',
         'wheight',
         'stock',
-        'isAvalaible'
+        'is_available'
     ];
 
     protected $casts = [

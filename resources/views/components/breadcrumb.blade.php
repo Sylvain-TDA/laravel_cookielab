@@ -10,7 +10,7 @@
                     </li>
                 @else
                     <li class="breadcrumb-item league-gothic">
-                        <a href="{{ $item['url'] }}">{{ $item['title'] }}</a>
+                        <a href="{{ $item['url'] }}"style="color:#B66E00cc">{{ $item['title'] }}</a>
                     </li>
                 @endif
             @endforeach

@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('category_id')->nullable();
+            $table->foreignId('category_id')->references('id')->on('categories');
             $table->text('description');
             $table->decimal('price', 8, 2);
-            $table->string('image')->nullable();
+            $table->string('url_image')->nullable();
             $table->integer('stock')->default(0);
             $table->boolean('is_available')->default(true);
             $table->float('weight');

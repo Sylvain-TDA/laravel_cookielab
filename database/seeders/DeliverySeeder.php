@@ -17,7 +17,7 @@ class DeliverySeeder extends Seeder
         for ($i = 0; $i < 4; $i++) {
             $deliveries[] = [
                 'name' => fake()->word(),
-                'cost' => fake()->randomFloat(2), // Random cost between 1 and 100
+                'cost' => fake()->numberBetween(0,100)
             ];
         }
         DB::table('deliveries')->insert($deliveries);
