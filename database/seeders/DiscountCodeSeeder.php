@@ -12,17 +12,18 @@ class DiscountCodeSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    { 
-
+    {
         $discountCodes = [];
-for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $discountCodes[] = [
-                'name' => fake()->word(),
+                'code' => fake()->word(),
                 'discount_percentage' => fake()->randomBetwen(0, 100),
                 'discount-fix' => fake()->randomNumber(3),
+                'valid_from' => now()->subDays(rand(1, 30)),
+                'valid_until' => now()->addDays(rand(1, 30)),
+                'is_active' => fake()->boolean(),
             ];
         }
-         DB::table('discount_codes')->insert($discountCodes);
-    
+        DB::table('discount_codes')->insert($discountCodes);
     }
 }
