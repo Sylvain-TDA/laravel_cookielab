@@ -13,6 +13,13 @@ class ProductService
                 ->get(); 
    }
 
+
+ public function getAllProducts()
+    {
+                return Product::all();  
+                
+   }
+
     public function getProduct($id)
     {
         return Product::findOrFail($id);

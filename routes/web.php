@@ -29,4 +29,13 @@ Route::get('/', [App\Http\Controllers\HomePageController::class, 'show'])->name(
 
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('search');
 
-Route::get('/backoffice', [App\Http\Controllers\BackOfficeController::class, 'show'])->name('backoffice');
+
+Route::get('/backoffice/products', [App\Http\Controllers\BackOfficeController::class, 'index'])->name('backoffice.product');
+
+Route::get('/backoffice/product/new', [App\Http\Controllers\BackOfficeController::class, 'new'])->name('backoffice.new-product');
+
+Route::get('/backoffice/product/{id}', [App\Http\Controllers\BackOfficeController::class, 'show'])->name('backoffice.show-product');
+
+Route::get('/backoffice/product/{id}/edit', [App\Http\Controllers\BackOfficeController::class, 'edit'])->name('backoffice.edit-product');
+
+// Route::get('/backoffice/product/{id}/delete', [App\Http\Controllers\BackOfficeController::class, 'delete'])->name('backoffice.delete-product');

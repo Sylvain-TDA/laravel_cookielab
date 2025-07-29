@@ -60,7 +60,7 @@
                 </li>
 
                 <li class="nav-item me-3 me-lg-0  league-gothic">
-                    <a class="nav-link" href="{{ route('backoffice') }}">
+                    <a class="nav-link" href="{{ route('backoffice.product') }}">
                         <span class="text-light d-none d-lg-inline-block">Admin</span>
                     </a>
                 </li>
