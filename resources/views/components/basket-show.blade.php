@@ -147,34 +147,33 @@
                             </div>
                         </div>
                     </div>
-
-                    @if(session('success'))
-                        <div class="alert alert-success">{{ session('success') }}</div>
-                    @endif
-
-                    @if(session('error'))
-                        <div class="alert alert-danger">{{ session('error') }}</div>
-                    @endif
-
-                    <form method="GET" action="{{  route('code.promo') }}">
-                        <div class="card mb-4">
-                            <div class="card-body p-4 d-flex flex-row">
-                                <div data-mdb-input-init class="form-outline flex-fill">
-                                    <input type="text" name="code" class="form-control form-control-lg"
-                                        value="{{ request('code') }}" />
-                                    <label class="code-promo" for="form1">Code promo</label>
-                                </div>
-                               
-                                <button type="submit" data-mdb-button-init data-mdb-ripple-init
-                                    class="btn btn-outline-warning btn-sm ms-2"
-                                    style="background-color: #FFEDD3; color:#B66E00cc ; border-color : white;"
-                                    onclick="">Appliquer</button>
-                            </div>
+                
+                    @if(session('discount'))
+                        <div class="alert alert-success">
+                            Code promo appliqué : -{{ session('discount') }}%
+                            <form method="POST" action="{{ route('code.promo.remove') }}">
+                                @csrf
+                                <button type="submit" class="btn btn-sm btn-danger ms-2">Supprimer</button>
+                            </form>
                         </div>
-                    </form>
-
-                     <div id="basket-data" data-discount="{{ $discount }}"></div>
-                     <p>Remise : <span id="discount-display">{{ $discount }}%</span></p>
+                    @else
+                        <form method="GET" action="{{ route('code.promo') }}">
+                            <div class="card mb-4">
+                                <div class="card-body p-4 d-flex flex-row">
+                                    <div data-mdb-input-init class="form-outline flex-fill">
+                                        <input type="text" name="code" class="form-control form-control-lg"
+                                            value="{{ request('code') }}" />
+                                        <label class="code-promo" for="form1">Code promo</label>
+                                    </div>
+                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-outline-warning btn-sm ms-2"
+                                        style="background-color: #FFEDD3; color:#B66E00cc ; border-color : white;">
+                                        Appliquer
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    @endif
 
                     <div class="card mb-4">
                         <div class="card-body p-4 d-flex flex-row">

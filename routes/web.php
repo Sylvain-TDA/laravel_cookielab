@@ -23,6 +23,9 @@ Route::get('/contact', function () {
 Route::get('/basket', [BasketController::class, 'show'])->name('basket');
 
 Route::get('/code-promo', [BasketController::class, 'codePromo'])->name('code.promo');
-
+Route::post('/code-promo/remove', function () {
+    session()->forget('discount');
+    return redirect()->back()->with('success', 'Code promo supprimé.');
+})->name('code.promo.remove');
 
 Route::get('/', [App\Http\Controllers\HomePageController::class, 'show'])->name('accueil');
