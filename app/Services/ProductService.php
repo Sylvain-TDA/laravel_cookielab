@@ -19,16 +19,32 @@ class ProductService
     }
 
 
-    public function searchItem($search)
-    {
-
-    if (empty($search)) {
-        return Product::select('id', 'name', 'description', 'price', 'url_image') ->get();
+    public function searchItem($search, $sort = null)
+{
+    $query = Product::query();
+    
+    // Filtrage par nom si recherche
+    if ($search) {
+        $query->where('name', 'like', '%' . $search . '%');
     }
     
-    return Product::where('name', 'like', "%{$search}%")
-                  ->get();
+    // Tri selon le paramètre
+    switch ($sort) {
+        case 'name':
+            $query->orderBy('name');
+            break;
+        case 'price':
+            $query->orderBy('price');
+            break;
+        default:
+            $query->orderBy('name'); // Tri par défaut
+            break;
+    }
+    
+    return $query->get();
 }
+
+
 }
 
 

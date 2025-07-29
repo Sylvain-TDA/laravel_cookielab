@@ -1,6 +1,22 @@
 <x-header />
 
 <main class="container my-4">
+
+    <!-- Boutons de tri -->
+    <div class="mb-3">  <!--fullUrlWithQuery permet de "reconstruire" l'url, en rajoutant ici sort = name -->
+        <a href="{{ request()->fullUrlWithQuery(['sort' => 'name']) }}" 
+            class="btn {{ request('sort') == 'name' ? '' : 'btn-secondary' }} me-2" {{ request('sort') == 'name' ? 'style=background-color:#B66E00CC;color:white' : '' }}>
+            Trier par nom
+        </a>
+
+        <a href="{{ request()->fullUrlWithQuery(['sort' => 'price']) }}"
+            class="btn {{ request('sort') == 'price' ? '' : 'btn-secondary' }}" {{ request('sort') == 'price' ? 'style=background-color:#B66E00CC;color:white' : '' }}>
+            Trier par prix
+        </a>
+
+
+    </div>
+
     <div class="row">
         @foreach($products as $product)
             <div class="col-md-4 mb-4">
