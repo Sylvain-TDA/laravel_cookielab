@@ -7,12 +7,12 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 
-class ProductController extends Controller
+class ProductSortedController extends Controller
 {
     //
     public function index(): View
     {
-        $products = Product::where('is_available',1)->get();
+        $products = DB::select('select * from products ORDER BY name');
 
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],

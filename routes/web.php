@@ -13,6 +13,8 @@ Route::get('/', function () {
 })->name('accueil');
 
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('catalogue');
+Route::get('/products-sorted', [App\Http\Controllers\ProductSortedController::class, 'index'])->name('catalogue-trie');
+
 
 Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('products.show');
 
