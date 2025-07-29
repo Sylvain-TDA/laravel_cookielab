@@ -22,9 +22,12 @@ class SearchController extends Controller
 public function search(Request $request) 
 {
    $searchName = $request->get('search');  // Récupérer la valeur du formulaire
-   $products = $this->productService->searchItem($searchName);  
+   $sort = $request->get('sort');          // Récupérer le paramètre de tri
+   
+   $products = $this->productService->searchItem($searchName, $sort);  
    
    return view('products.search', compact('products'));
 }
+
 
 }
