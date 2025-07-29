@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OrderItem;
 use App\models\User;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -81,5 +82,13 @@ class BackOfficeController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Produit mis à jour avec succès');
+    }
+
+    public function delete($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect()->to('/backoffice')->with('success', 'Produit supprimé');
     }
 }

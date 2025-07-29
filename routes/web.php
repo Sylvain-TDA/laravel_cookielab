@@ -36,3 +36,5 @@ Route::get('/backoffice/{id}', [App\Http\Controllers\BackOfficeController::class
 Route::get('/backoffice/{id}/edit', [App\Http\Controllers\BackOfficeController::class, 'edit'])->name('backoffice.product-edit');
 
 Route::put('/backoffice/{id}/update', [App\Http\Controllers\BackOfficeController::class, 'update'])->name('backoffice.product-update');
+
+Route::delete('/backoffice/{id}/delete', [App\Http\Controllers\BackOfficeController::class, 'delete'])->name('backoffice.product-delete');
