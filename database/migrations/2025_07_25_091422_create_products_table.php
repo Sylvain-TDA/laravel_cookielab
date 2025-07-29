@@ -22,6 +22,8 @@ return new class extends Migration
             $table->boolean('is_available')->default(true);
             $table->float('weight');
             $table->timestamps();
+            $table->tinyText('description_short');
+            $table->longText('description_long');
         });
     }
 

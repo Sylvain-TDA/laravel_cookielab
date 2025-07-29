@@ -25,12 +25,14 @@ class Product extends Model
         'url_image',
         'wheight',
         'stock',
-        'is_available'
+        'is_available',
+        'description_long',
+        'description_short'
     ];
 
     protected $casts = [
         'stock' => 'integer',
-        'isAvailable' => 'boolean',
+        'is_available' => 'boolean',
     ];
 
     protected $guarded = ['id'];

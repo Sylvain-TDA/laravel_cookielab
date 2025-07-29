@@ -28,6 +28,8 @@ class ProductSeeder extends Seeder
             'stock' => fake()->numberBetween(0, 50),
             'is_available' => fake()->boolean(),
             'price' => fake()->randomFloat(2, 1.50, 100),
+            'description_short' => fake()->sentence(),
+            'description_long' => fake()->sentence(),
         ];
     }
 
