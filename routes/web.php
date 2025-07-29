@@ -22,6 +22,7 @@ Route::get('/contact', function () {
 
 Route::get('/basket', [BasketController::class, 'show'])->name('basket');
 
+Route::get('/code-promo', [BasketController::class, 'codePromo'])->name('code.promo');
 
 
 Route::get('/', [App\Http\Controllers\HomePageController::class, 'show'])->name('accueil');

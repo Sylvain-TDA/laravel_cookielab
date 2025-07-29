@@ -1,7 +1,6 @@
 @extends('Layout.basket')
 @section('basket-content')
 
-
     @vite('resources/js/app.js')
 
     <section class="h-100">
@@ -149,18 +148,33 @@
                         </div>
                     </div>
 
-                    <div class="card mb-4">
-                        <div class="card-body p-4 d-flex flex-row">
-                            <div data-mdb-input-init class="form-outline flex-fill">
-                                <input type="text" id="form1" class="form-control form-control-lg" />
-                                <label class="code-promo" for="form1">Code promo</label>
+                    @if(session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                    @endif
+
+                    @if(session('error'))
+                        <div class="alert alert-danger">{{ session('error') }}</div>
+                    @endif
+
+                    <form method="GET" action="{{  route('code.promo') }}">
+                        <div class="card mb-4">
+                            <div class="card-body p-4 d-flex flex-row">
+                                <div data-mdb-input-init class="form-outline flex-fill">
+                                    <input type="text" name="code" class="form-control form-control-lg"
+                                        value="{{ request('code') }}" />
+                                    <label class="code-promo" for="form1">Code promo</label>
+                                </div>
+                               
+                                <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                                    class="btn btn-outline-warning btn-sm ms-2"
+                                    style="background-color: #FFEDD3; color:#B66E00cc ; border-color : white;"
+                                    onclick="">Appliquer</button>
                             </div>
-                            <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                class="btn btn-outline-warning btn-sm ms-2"
-                                style="background-color: #FFEDD3; color:#B66E00cc ; border-color : white;"
-                                onclick="printCodePromo()">Appliquer</button>
                         </div>
-                    </div>
+                    </form>
+
+                     <div id="basket-data" data-discount="{{ $discount }}"></div>
+                     <p>Remise : <span id="discount-display">{{ $discount }}%</span></p>
 
                     <div class="card mb-4">
                         <div class="card-body p-4 d-flex flex-row">
@@ -226,7 +240,7 @@
                     <div class="m-4" onclick="this.parentNode.querySelector('input[type=radio]')">Prix transport: <span
                             id="delivery-price">0.00€</span>
                     </div>
-                    
+
                     <div class="print-code-promo">
                     </div>
 
