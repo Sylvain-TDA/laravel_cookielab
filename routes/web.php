@@ -32,3 +32,7 @@ Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])-
 Route::get('/backoffice', [App\Http\Controllers\BackOfficeController::class, 'index'])->name('backoffice');
 
 Route::get('/backoffice/{id}', [App\Http\Controllers\BackOfficeController::class, 'show'])->name('backoffice.product-show');
+
+Route::get('/backoffice/{id}/edit', [App\Http\Controllers\BackOfficeController::class, 'edit'])->name('backoffice.product-edit');
+
+Route::put('/backoffice/{id}/update', [App\Http\Controllers\BackOfficeController::class, 'update'])->name('backoffice.product-update');
