@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/page-produit/{id}',[App\Http\Controllers\PageProduit::class, 'show'])->name('page-produit');
 
-Route::post('/products',[ProductController::class,'store'])->name('basketForm');//name is not good
+Route::post('/products', [ProductController::class, 'store'])->name('product.store');
+
 
 Route::get('/', function () {
     return view('welcome'); 

@@ -43,6 +43,7 @@ class ProductController extends Controller
         {
             $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'quantity' => 'required|integer|min:1',
             'price' => 'required|numeric',]);
         
             Product::create($validated);

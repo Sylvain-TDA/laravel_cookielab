@@ -28,23 +28,30 @@
                                     </select>
                                 </div>
 
-                                <div class="d-flex flex-row mx-1 px-0 rounded border border-dark" > <!-- Button quantité -->
+                                <div class="d-flex flex-row mx-1 px-0 rounded border border-dark"> <!-- Button quantité -->
                                     <button class="rounded" style="width: 60px; height : 60px"> <b>-</b> </button>
-                                        <h1 class="d-flex mx-3">1</h1>
+                                    <h1 class="d-flex mx-3">1</h1>
                                     <button class="rounded" style="width: 60px; height : 60px"> <b>+</b> </button>
                                 </div>
-
-                                <form action="{{ route('basketForm') }}" method="POST">
-                                    @csrf <!-- Protection contre les attaques CSRF -->
-                                    <button class="rounded" type="submit" style="width : 130px; height : 60px; background-color : rgba(189,125,26,255)" disabled>
-                                        Validation de l'achat
-                                    </button>
+                                <input type="hidden" name="price" id="price" value='$product->price' />
+                                <input type="hidden" name="name" id="name" value='$product->name' />
+                                <input type="hidden" name="quantity" id="quantity" value={{$i}} />
+                                @csrf <!-- Protection contre les attaques CSRF -->
+                                <button class="rounded" type="submit" style="width : 130px; height : 60px; background-color : rgba(189,125,26,255)" disabled>
+                                    Validation de l'achat
+                                </button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
+            </main>
+
+            </div>
+
+            </div>
+            </div>
             </main>
 
             <x-footer /> <!-- Pour injecter le footer -->
