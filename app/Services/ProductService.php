@@ -17,7 +17,37 @@ class ProductService
     {
         return Product::findOrFail($id);
     }
+
+
+    public function searchItem($search, $sort = null)
+{
+    $query = Product::query();
+    
+    // Filtrage par nom si recherche
+    if ($search) {
+        $query->where('name', 'like', '%' . $search . '%');
+    }
+    
+    // Tri selon le paramètre
+    switch ($sort) {
+        case 'name':
+            $query->orderBy('name');
+            break;
+        case 'price':
+            $query->orderBy('price');
+            break;
+        default:
+            $query->orderBy('name'); // Tri par défaut
+            break;
+    }
+    
+    return $query->get();
 }
+
+
+}
+
+
 
 
   /*public function getProducts(){
