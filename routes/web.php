@@ -29,4 +29,6 @@ Route::get('/', [App\Http\Controllers\HomePageController::class, 'show'])->name(
 
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('search');
 
-Route::get('/backoffice', [App\Http\Controllers\BackOfficeController::class, 'show'])->name('backoffice');
+Route::get('/backoffice', [App\Http\Controllers\BackOfficeController::class, 'index'])->name('backoffice');
+
+Route::get('/backoffice/{id}', [App\Http\Controllers\BackOfficeController::class, 'show'])->name('backoffice.product-show');
