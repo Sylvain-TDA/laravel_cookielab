@@ -28,3 +28,5 @@ Route::get('/basket', [BasketController::class, 'show'])->name('basket');
 Route::get('/', [App\Http\Controllers\HomePageController::class, 'show'])->name('accueil');
 
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('search');
+
+Route::get('/backoffice', [App\Http\Controllers\BackOfficeController::class, 'show'])->name('backoffice');
