@@ -16,27 +16,27 @@
             </tr>
             <tr>
                 <th>Nom</th>
-                <td><input type="text" name="name" class="form-control" value="{{ $product->name }}"></td>
+                <td><input type="text" name="name" class="form-control" value="{{old('name', $product->name) }}"></td>
             </tr>
             <tr>
                 <th>Catégorie</th>
-                <td><input type="text" name="category_id" class="form-control" value="{{ $product->category_id }}"></td>
+                <td><input type="text" name="category_id" class="form-control" value="{{ old('category_id',$product->category_id) }}"></td>
             </tr>
             <tr>
                 <th>Description</th>
-                <td><textarea name="description" class="form-control">{{ $product->description }}</textarea></td>
+                <td><textarea name="description" class="form-control"value="{{old('description', $product->description) }}"></textarea></td>
             </tr>
             <tr>
                 <th>Prix</th>
-                <td><input type="text" name="price" class="form-control" value="{{ $product->price }}"></td>
+                <td><input type="text" name="price" class="form-control" value="{{ old('price',$product->price) }}"></td>
             </tr>
             <tr>
                 <th>URL de l’image</th>
-                <td><input type="text" name="url_image" class="form-control" value="{{ $product->url_image }}"></td>
+                <td><input type="text" name="url_image" class="form-control" value="{{ old('url_image',$product->url_image) }}"></td>
             </tr>
             <tr>
                 <th>Stock</th>
-                <td><input type="number" name="stock" class="form-control" value="{{ $product->stock }}"></td>
+                <td><input type="number" name="stock" class="form-control" value="{{ old('stock',$product->stock) }}"></td>
             </tr>
             <tr>
                 <th>Disponible</th>

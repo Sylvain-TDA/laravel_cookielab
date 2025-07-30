@@ -70,7 +70,7 @@ class BackOfficeController extends Controller
     {
         $product = Product::findOrFail($id);
 
-         $request->validate(rules: [
+         $request->validate( [
             'name' => 'required|max:255',
             'category_id' => 'numeric|required',
             'description' => 'required|max:255',
@@ -79,7 +79,7 @@ class BackOfficeController extends Controller
             'stock' => 'numeric|min:0',
             'is_available' => 'nullable',
             'weight' => 'numeric|nullable|gt:0',
-        ], params: [
+        ],  [
             'name.required' => 'Le nom du produit est obligatoire.',
             'name.max' => 'Le nom ne doit pas dépasser 255 caractères.',
             'category_id.required' => 'La catégorie est obligatoire.',
