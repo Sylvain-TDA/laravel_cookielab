@@ -32,10 +32,15 @@ Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])-
 
 Route::get('/backoffice/products', [App\Http\Controllers\BackOfficeController::class, 'index'])->name('backoffice.product');
 
-Route::get('/backoffice/product/new', [App\Http\Controllers\BackOfficeController::class, 'new'])->name('backoffice.new-product');
+Route::get('/backoffice/product/new', action: [App\Http\Controllers\BackOfficeController::class, 'new'])->name('backoffice.new-product');
 
 Route::get('/backoffice/product/{id}', [App\Http\Controllers\BackOfficeController::class, 'show'])->name('backoffice.show-product');
 
 Route::get('/backoffice/product/{id}/edit', [App\Http\Controllers\BackOfficeController::class, 'edit'])->name('backoffice.edit-product');
 
-// Route::get('/backoffice/product/{id}/delete', [App\Http\Controllers\BackOfficeController::class, 'delete'])->name('backoffice.delete-product');
+Route::put('/backoffice/product/{id}/edit', [App\Http\Controllers\BackOfficeController::class, 'update'])->name('backoffice.update-product');
+
+Route::delete('/backoffice/product/{id}/delete', [App\Http\Controllers\BackOfficeController::class, 'delete'])->name('backoffice.delete-product');
+
+Route::post('/backoffice/product/new', action: [App\Http\Controllers\BackOfficeController::class, 'post'])->name('backoffice.post-product');
+

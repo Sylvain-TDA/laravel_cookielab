@@ -21,9 +21,10 @@ class Product extends Model
     [
         'name',
         'description',
+        'category_id',
         'price',
         'url_image',
-        'wheight',
+        'weight',
         'stock',
         'is_available'
     ];

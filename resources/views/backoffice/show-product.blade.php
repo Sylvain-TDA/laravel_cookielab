@@ -1,6 +1,14 @@
 <x-header />
+<x-breadcrumb :items="$breadcrumbs ?? []" />
+
+
 
 <main class="container-fluid my-4">
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
             <div class="card h-100 shadow">
@@ -82,7 +90,9 @@
                                 class="btn text-light py-3 fs-5 fw-bold shadow-sm"
                                 style="background-color: #B66E00; transition: all 0.3s ease;">
                                 ✏️ Editer ce produit
+
                             </a>
+
                         </div>
                     </div>
                 </div>
@@ -90,5 +100,7 @@
         </div>
     </div>
 </main>
+
+
 
 <x-footer />
