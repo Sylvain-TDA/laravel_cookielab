@@ -68,9 +68,9 @@ class Product extends Model
 
     /**===== Accesseurs et méthodes =====*/
     // Produits achetables (en stock)
-    public function canBePurchased($query)
+    public function canBePurchased()
     {
-        return $query->sellable() && $query->stock > 0;
+        return $this->sellable() && $this->stock > 0;
     }
 
     // Message d'indisponibilité

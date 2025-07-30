@@ -2,22 +2,39 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Services\ProductSorter;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /** Afficher la liste des produits disponibles */
-    public function index()
+    protected ProductSorter $sorter;
+
+    public function __construct(ProductSorter $sorter)
     {
-        $products = Product::sellable()
-            ->orderBy('name', 'asc')
-            ->get();
+        $this->sorter = $sorter;
+    }
+
+    /** Afficher la liste des produits disponibles */
+    public function index(Request $request)
+    {
+        $query = Product::sellable();
+        
+        $query = $this->sorter->applySort($request, $query);
+
+        $products = $query->paginate(12);
 
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],
             ['title' => 'Nos produits', 'url' => '']
         ];
-        return view('products.product', compact('products', 'breadcrumbs'));
+
+        return view('products.product', [
+            'products' => $products,
+            'breadcrumbs' => $breadcrumbs,
+            'sorter' => $this->sorter,
+            'currentSort' => $this->sorter->getCurrentSort($request),
+            'currentOrder' => $this->sorter->getCurrentOrder($request),
+        ]);
     }
 
     /** Afficher un produit spécifique */
@@ -43,44 +60,68 @@ class ProductController extends Controller
     }
 
     /** Afficher tous les produits, y compris ceux qui ne sont pas disponibles (pour l'admin) */
-    public function indexAll()
+    public function indexAll(Request $request)
     {
-        $products = Product::all();
+        $$query = Product::query();
+        $query = $this->sorter->applySort(request(), $query);
+
+        $products = $query->paginate(12);
 
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],
             ['title' => 'Tous les produits', 'url' => '']
         ];
-        return view('products.product-show', compact('product', 'breadcrumbs'));
+
+        return view('products.product', [
+            'products' => $products,
+            'breadcrumbs' => $breadcrumbs,
+            'sorter' => $this->sorter,
+            'currentSort' => $this->sorter->getCurrentSort($request),
+            'currentOrder' => $this->sorter->getCurrentOrder($request),
+        ]);
     }
     
     /** Afficher les produits en stock */
-    public function inStock()
+    public function inStock(Request $request)
     {
-        $products = Product::sellable()
-            ->where('stock', '>', 0)
-            ->orderBy('name', 'asc')
-            ->get();
+        $query = Product::sellable()->where('stock', '>', 0);
+        $query = $this->sorter->applySort($request, $query);
+
+        $products = $query->paginate(12);
 
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],
             ['title' => 'Nos produits', 'url' => '']
         ];
-        return view('products.product', compact('products', 'breadcrumbs'));
+
+        return view('products.product', [
+            'products' => $products,
+            'breadcrumbs' => $breadcrumbs,
+            'sorter' => $this->sorter,
+            'currentSort' => $this->sorter->getCurrentSort($request),
+            'currentOrder' => $this->sorter->getCurrentOrder($request),
+        ]);
     }
 
-    /** Afficher les produits d'une catégorie spécifique */
-    /**public function category($categoryId)
+     /** Afficher les produits d'une catégorie spécifique */
+    public function category($categoryId, Request $request)
     {
-        $products = Product::where('category_id', $categoryId)
-            ->available()
-            ->orderBy('name', 'asc')
-            ->get();
+        $query = Product::sellable()->where('category_id', $categoryId);
+        $query = $this->sorter->applySort($request, $query);
+        
+        $products = $query->paginate(12);
 
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],
-            ['title' => 'Produits par catégorie', 'url' => '']
+            ['title' => 'Nos produits', 'url' => '']
         ];
-        return view('products.product', compact('products', 'breadcrumbs'));
-    }*/
+        
+        return view('products.product', [
+            'products' => $products,
+            'breadcrumbs' => $breadcrumbs,
+            'sorter' => $this->sorter,
+            'currentSort' => $this->sorter->getCurrentSort($request),
+            'currentOrder' => $this->sorter->getCurrentOrder($request),
+        ]);
+    }
 }

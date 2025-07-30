@@ -9,6 +9,28 @@
                 <h1 class="mb-4">@yield('title', 'Nos Produits')</h1>
             </div>
         </div>
+        
+        {{-- Section de tri --}}
+        @if(isset($sorter))
+        <div class="row mb-4">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="fw-bold me-2">Tri rapide :</span>
+                        @foreach($sorter->getSortOptions() as $key => $label)
+                            <a href="{{ $sorter->getToggleOrderUrl($currentSort, $currentOrder, $key) }}" 
+                               class="btn btn-sm {{ $sorter->isCurrentSort($key, request()) ? 'btn-primary' : 'btn-outline-secondary' }}">
+                                {{ $label }} 
+                                @if($sorter->isCurrentSort($key, request()))
+                                    {!! $sorter->getSortIcon($key, request()) !!}
+                                @endif
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        {{-- Affichage des produits --}}
 
         <div class="row">
             @forelse($products as $product)
@@ -86,6 +108,15 @@
                 </div>
             @endforelse
         </div>
+
+        {{-- Pagination avec présrvation des paramètres de tri --}}
+        @if($products->hasPages())
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    {{ $products->appends(request()->query())->links() }}
+                </div>
+            </div>
+        @endif
     </div>
 </main>
 
