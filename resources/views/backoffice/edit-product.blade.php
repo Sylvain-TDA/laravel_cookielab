@@ -1,5 +1,15 @@
 <x-header />
 
+@if ($errors->any())
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <div class="container-fluid py-4">
     <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -21,7 +31,7 @@
                         <div class="mb-4">
                             <label for="name" class="form-label fw-bold">📦 Nom du produit</label>
                             <input type="text" class="form-control form-control-lg" id="name" name="name"
-                                value="{{ request('name', $product->name) }}">
+                                value="{{ old('name', request('name', $product->name)) }}">
                         </div>
 
                         <!-- Catégorie -->
@@ -29,10 +39,10 @@
                             <label for="category_id" class="form-label fw-bold">🏷️ Catégorie</label>
                             <select class="form-select form-select-lg" id="category_id" name="category_id">
                                 <option value="">Choisir une catégorie</option>
-                                <option value="1" {{ request('category_id') == 1 ? 'selected' : '' }}>
+                                <option value="1" {{ old('category_id', request('category_id')) == 1 ? 'selected' : '' }}>
                                     🍪 Cookies
                                 </option>
-                                <option value="2" {{ request('category_id') == 2 ? 'selected' : '' }}>
+                                <option value="2" {{ old('category_id', request('category_id')) == 2 ? 'selected' : '' }}>
                                     🧰 Kits à cookies
                                 </option>
                             </select>
@@ -42,7 +52,7 @@
                         <div class="mb-4">
                             <label for="description" class="form-label fw-bold">📝 Description</label>
                             <textarea class="form-control" id="description" name="description"
-                                rows="4">{{ request('description', $product->description) }}</textarea>
+                                rows="4">{{ old('description', request('description', $product->description)) }}</textarea>
                         </div>
 
                         <!-- Prix et Stock -->
@@ -51,14 +61,14 @@
                                 <label for="price" class="form-label fw-bold">💰 Prix (€)</label>
                                 <div class="input-group input-group-lg">
                                     <input type="number" class="form-control" id="price" name="price" step="0.01"
-                                        min="0" value="{{ request('price', $product->price) }}">
+                                        value="{{ old('price', request('price', $product->price)) }}">
                                     <span class="input-group-text">€</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="stock" class="form-label fw-bold">📦 Stock</label>
                                 <input type="number" class="form-control form-control-lg" id="stock" name="stock"
-                                    min="0" value="{{ request('stock', $product->stock) }}">
+                                     value="{{ old('stock', request('stock', $product->stock)) }}">
                             </div>
                         </div>
 
@@ -69,7 +79,7 @@
                             <div id="url_input" class="mb-3">
                                 <input type="url" class="form-control" name="url_image"
                                     placeholder="https://exemple.com/image.jpg"
-                                    value="{{ request('url_image', $product->url_image) }}">
+                                    value="{{ old('url_image', request('url_image', $product->url_image)) }}">
                             </div>
                         </div>
 
@@ -78,17 +88,17 @@
                             <div class="col-md-6">
                                 <label for="weight" class="form-label fw-bold">⚖️ Poids (grammes)</label>
                                 <div class="input-group input-group-lg">
-                                    <input type="number" class="form-control" id="weight" name="weight" min="0"
-                                        step="0.1" value="{{ request('weight', $product->weight) }}">
+                                    <input type="number" class="form-control" id="weight" name="weight"
+                                        step="0.1" value="{{ old('weight', request('weight', $product->weight)) }}">
                                     <span class="input-group-text">g</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="available" class="form-label fw-bold">✅ Disponibilité</label>
                                 <select class="form-select form-select-lg" id="available" name="available">
-                                    <option value="1" {{ request('available', $product->available) == 1 ? 'selected' : '' }}>✅ Disponible
+                                    <option value="1" {{ old('available', request('available', $product->available)) == 1 ? 'selected' : '' }}>✅ Disponible
                                     </option>
-                                    <option value="0" {{ request('available', $product->available) == 0 ? 'selected' : '' }}>❌ Non disponible
+                                    <option value="0" {{ old('available', request('available', $product->available)) == 0 ? 'selected' : '' }}>❌ Non disponible
                                     </option>
                                 </select>
                             </div>

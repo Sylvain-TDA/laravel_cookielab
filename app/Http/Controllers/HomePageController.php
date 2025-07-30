@@ -23,8 +23,9 @@ class HomePageController extends Controller
 
 public function show(){
 
-   $products = $this->productService->getProducts();
-   return view('welcome', compact('products'));
+   $productsCookie = $this->productService->getAllProducts()->where('category_id', 1);
+   $productsKit = $this->productService->getAllProducts()->where('category_id', 2);
+   return view('welcome', compact('productsCookie', 'productsKit'));
 
 
 }
