@@ -29,9 +29,9 @@
                                 </div>
 
                                 <div class="d-flex flex-row mx-1 px-0 rounded border border-dark"> <!-- Button quantité -->
-                                    <button class="rounded" style="width: 60px; height : 60px"> <b>-</b> </button>
+                                    <button class="rounded" style="width: 60px; height : 100%"> <b>-</b> </button>
                                     <h1 class="d-flex mx-3">1</h1>
-                                    <button class="rounded" style="width: 60px; height : 60px"> <b>+</b> </button>
+                                    <button class="rounded" style="width: 60px; height : 100%"> <b>+</b> </button>
                                 </div>
                                 <input type="hidden" name="price" id="price" value='$product->price' />
                                 <input type="hidden" name="name" id="name" value='$product->name' />
