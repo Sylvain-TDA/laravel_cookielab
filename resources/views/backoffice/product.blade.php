@@ -2,6 +2,12 @@
 <main class="container my-4">
     <x-breadcrumb :items="$breadcrumbs ?? []" />
     @section('title', 'Nos Produits')
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -39,11 +45,10 @@
                     </div>
                 </div>
             @endforelse
-            @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
+        </div>
+        <div>
+            <a href="{{ route('backoffice.product-create') }}" class="btn text-light"
+                style="background-color:#B66E00cc;">Créer un produit</a>
         </div>
     </div>
 </main>

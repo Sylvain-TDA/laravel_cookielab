@@ -29,7 +29,7 @@ class PageProduitController extends Controller
     }
 
     //
-    public function show($id)
+    public function show($id): View
     {
           $products = DB::select('select name, description, price, url_image from products');
 

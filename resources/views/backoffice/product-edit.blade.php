@@ -62,9 +62,6 @@
             </tr>
         </table>
     </form>
-
-    <div></div>
-
     <form method="POST" action="{{ route('backoffice.product-delete', $product->id) }}">
         @csrf
         @method('DELETE')

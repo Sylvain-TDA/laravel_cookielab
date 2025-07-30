@@ -25,12 +25,12 @@ class OrderItem extends Model
     /** Relation avec le model Order */
     public function order()
     {
-        return $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class, 'order_id');
     }
 
     /** Relation avec le model Product */
     public function product()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class, 'product_id');
     }
 }

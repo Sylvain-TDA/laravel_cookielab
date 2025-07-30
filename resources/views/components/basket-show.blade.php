@@ -220,11 +220,11 @@
                                 DPD
                             </label>
                         </div>
-                        
+
                     </div>
                     <div class="m-4" onclick="this.parentNode.querySelector('input[type=radio]')">Prix : <span
-                                id="delivery-price">0.00€</span>
-                        </div>
+                            id="delivery-price">0.00€</span>
+                    </div>
                 </div>
 
 
@@ -233,8 +233,6 @@
                         class="btn btn-warning btn-block btn-lg my-3"
                         style="background-color: #B66E00cccc; color: white; border-color : white;">Paiement</button>
                 </div>
-
-
             </div>
         </div>
         </div>

@@ -38,3 +38,7 @@ Route::get('/backoffice/{id}/edit', [App\Http\Controllers\BackOfficeController::
 Route::put('/backoffice/{id}/update', [App\Http\Controllers\BackOfficeController::class, 'update'])->name('backoffice.product-update');
 
 Route::delete('/backoffice/{id}/delete', [App\Http\Controllers\BackOfficeController::class, 'delete'])->name('backoffice.product-delete');
+
+Route::get('/backoffice/products/create', [App\Http\Controllers\BackOfficeController::class, 'showCreate'])->name('backoffice.product-create');
+
+Route::post('/backoffice/products/create', [App\Http\Controllers\BackOfficeController::class, 'store'])->name('backoffice.product.store');
