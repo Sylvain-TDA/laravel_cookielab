@@ -33,7 +33,7 @@
                     method="GET">
 
                     <input autocomplete="off" type="search" name="search" value="{{ request('search') }}"
-                        class="form-control rounded" placeholder="Search"
+                        class="form-control rounded" placeholder="Rechercher un produit"
                         style="min-width: 125px; background-color: #ffedd3;" />
 
                     <button type="submit" class="text-light input-group-text border-0 d-none d-md-flex fs-4"

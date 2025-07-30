@@ -10,13 +10,6 @@ class Product extends Model
 
     protected $primaryKey = 'id';
 
-
-    public function GetAllProduct()
-    {
-        return $products = Product::all();
-    }
-
-
     protected $fillable =
     [
         'name',
