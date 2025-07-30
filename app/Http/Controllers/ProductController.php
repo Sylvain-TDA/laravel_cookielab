@@ -7,6 +7,22 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+
+    public function delete($id)
+    {
+        $product = Product::findOrFail($id);
+
+        $product->delete();
+
+        return redirect()->back()->with('success', 'Produit supprimé avec succès !');
+    }
+
+    public function edit($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('products.edit',compact('product'));
+    }
    //
     public function index()
     {
@@ -45,9 +61,9 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'quantity' => 'required|integer|min:1',
             'price' => 'required|numeric',]);
-        
+
             Product::create($validated);
-     
+
             return redirect()->back()->with('success','produit ajouté !');
         }
 

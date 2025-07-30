@@ -11,6 +11,19 @@
                     @else
                         <h3>Produit indisponible a l'EXPLOITATION</h3>
                 @endif
+
+            <form action ="{{route('product.edit' , $product->id)}}" method="GET">
+
+            <button class = "rounded" class="btn btn-danger" type = "submit" label = "delte"> modifier infos </button>
+            </form>
+
+
+            <form action="{{route('product.delete' , $product->id)}}" method="POST">
+                 @csrf
+                 @method('DELETE')
+                 <button class = "rounded"  class="btn btn-danger" type = "submit" label = "delete"> Supprimer l'article </delete>
+             </form>
+
                 </div>
             </div>
         </div>

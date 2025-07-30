@@ -11,9 +11,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/products', [ProductController::class, 'store'])->name('product.store');
 
+Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
+
+Route::delete('/products/{id}/delete',[ProductController::class,'delete'])->name('product.delete');
 
 Route::get('/', function () {
-    return view('welcome'); 
+    return view('welcome');
 })->name('accueil');
 
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('catalogue');
@@ -22,7 +25,7 @@ Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'sh
 
 Route::get('/contact', function () {
     return view('contact');
-})->name('contact');  
+})->name('contact');
 
 Route::get('/basket', [BasketController::class, 'show'])->name('basket');
 
