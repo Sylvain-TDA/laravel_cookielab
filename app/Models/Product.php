@@ -16,7 +16,7 @@ class Product extends Model
         'description',
         'price',
         'url_image',
-        'wheight',
+        'weight',
         'stock',
         'is_active',
         'is_available',
@@ -68,9 +68,9 @@ class Product extends Model
 
     /**===== Accesseurs et méthodes =====*/
     // Produits achetables (en stock)
-    public function canBePurchased()
+    public function canBePurchased($query)
     {
-        return $this->sellable() && $this->stock > 0;
+        return $query->sellable() && $query->stock > 0;
     }
 
     // Message d'indisponibilité

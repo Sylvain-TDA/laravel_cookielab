@@ -57,7 +57,8 @@ class ProductController extends Controller
     /** Afficher les produits en stock */
     public function inStock()
     {
-        $products = Product::canBePurchased()
+        $products = Product::sellable()
+            ->where('stock', '>', 0)
             ->orderBy('name', 'asc')
             ->get();
 

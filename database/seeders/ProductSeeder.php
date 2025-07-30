@@ -26,6 +26,7 @@ class ProductSeeder extends Seeder
             'url_image' => 'https://maison-kayser.com/wp-content/uploads/2024/07/Cookies-au-chocolat-noir.jpg?x25603',
             'weight' => fake()->randomFloat(2, 50, 2000),
             'stock' => fake()->numberBetween(0, 50),
+            'is_active' => fake()->boolean(),
             'is_available' => fake()->boolean(),
             'price' => fake()->randomFloat(2, 1.50, 100),
         ];

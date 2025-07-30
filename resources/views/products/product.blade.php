@@ -59,7 +59,7 @@
                                 </a>
 
                                 @if($product->canBePurchased())
-                                    <form action="{{ route('basket.add') }}" method="POST" class="d-inline">
+                                    <form action="{{ route('basket') }}" method="POST" class="d-inline">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         <input type="hidden" name="quantity" value="1">
