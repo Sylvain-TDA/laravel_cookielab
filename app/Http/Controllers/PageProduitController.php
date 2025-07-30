@@ -52,4 +52,14 @@ class PageProduitController extends Controller
         return view('products.product-show', compact('product', 'breadcrumbs'));
     }
 
+    public function calculate(Request $request) {
+       $quantity =  $request->get('quantity');
+       $price = $request->get('price');
+
+       $sum = $quantity*$quantity;
+
+       return view ('products.product-show',compact('sum'));
+
+    }
+
 }
