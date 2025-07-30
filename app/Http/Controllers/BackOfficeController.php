@@ -13,20 +13,13 @@ class BackOfficeController extends Controller
 
 
 protected $productService;
-
-
-   
-
+ 
     public function __construct(ProductService $productService)
         {
         
             $this->productService = $productService; 
         }
-
-
-
-   
-
+ 
     public function index (): View {
 
    $productsCookie = $this->productService->getAllProducts()->where('category_id', 1);
