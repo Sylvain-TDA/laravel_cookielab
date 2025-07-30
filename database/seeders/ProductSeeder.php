@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
         $products = [];
         $category_id = Category::pluck('id')->toArray();
 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $products[] = [
             'category_id' => $category_id[array_rand($category_id)],
             'name' => fake()->lastName(),
