@@ -4,7 +4,11 @@
 
     <x-breadcrumb :items="$breadcrumbs ?? []" />
 
-
+    @if(session('created'))
+        <div class="alert alert-success">
+            {{ session('created') }}
+        </div>
+    @endif
 
     <div class="d-flex flex-column bd-hightlight mb-3">
         <div class="">
@@ -23,7 +27,7 @@
         <div class="text-end" style="width:50vh">
             <div class="input-group">
                 <input type="number" class="form-control" id="quantities" name="quantities"
-                    value="{{  request('quantities') }}">
+                    value="{{  request('quantities') }}" min="1" >
                 <span class="input-group-text">cookie(s)</span>
             </div>
 

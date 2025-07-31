@@ -45,7 +45,7 @@ class BasketController extends Controller
             'sum' => $quantity * $price,
         ];
 
-        $basket = session('temporary_basket',[]);
+        $basket = session('temporary_basket', []);
 
         $basket[$item->id] = $new_item;
 
@@ -55,5 +55,20 @@ class BasketController extends Controller
 
 
         return view('products.product-refreshed', compact('basket', 'item'));
+    }
+
+    public function createOrder(Request $request)
+    {
+
+        Order::create([
+            'customer_id' => 1,
+            'discount_id' => 1,
+            'delivery_mode_id' => 1,
+            'total_amount' => 1200,
+        ]);
+
+         session(['temporary_basket' => []]);
+
+        return redirect()->to('/products')->with('created', 'Produit ajouté');
     }
 }

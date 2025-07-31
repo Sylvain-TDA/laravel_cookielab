@@ -25,11 +25,9 @@ Route::get('/products/{id}', [PageProduitController::class, 'show'])->name('prod
 
 Route::get('/products/{id}/refreshed', [BasketController::class, 'beforeBasket',])->name('refreshed');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');  
-
 Route::get('/basket', [BasketController::class, 'show',])->name('basket');
+
+Route::post('/basket-create', [BasketController::class, 'createOrder'])->name('basket-create');
 
 Route::get('/', [HomePageController::class, 'show'])->name('accueil');
 

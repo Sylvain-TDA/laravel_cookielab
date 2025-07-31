@@ -11,6 +11,9 @@ class Order extends Model
     protected $primaryKey = "id";
 
     protected $fillable = [
+        'customer_id',
+        'discount_id',
+        'delivery_mode_id',
         'total_amount',
     ];
 
@@ -18,18 +21,22 @@ class Order extends Model
 
     public $timestamps = true;
 
-    public function customer() {
+    public function customer()
+    {
         return $this->belongsTo(Customer::class);
     }
 
-     public function discountCodes() {
+    public function discountCodes()
+    {
         return $this->belongsTo(DiscountCode::class);
     }
-     public function delivery() {
+    public function delivery()
+    {
         return $this->belongsTo(Delivery::class);
     }
 
-    public function orderItems() {
+    public function orderItems()
+    {
         return $this->hasMany(OrderItem::class);
     }
 }
