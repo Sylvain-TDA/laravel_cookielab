@@ -80,7 +80,7 @@
 
                 <!-- Avatar -->
                 <li class="nav-item dropdown align-self-center">
-                    <a class="text-light nav-link dropdown-toggle d-flex align-items-center" href="#"
+                    <a class="text-light nav-link dropdown-toggle d-flex align-items-center" href="{{ route('login') }}"
                         id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
                         <i class="text-light fa-solid fa-circle-user fs-4"></i>
                     </a>
