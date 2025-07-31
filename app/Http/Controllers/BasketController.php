@@ -33,7 +33,7 @@ class BasketController extends Controller
         $item = Product::findOrFail($id);
 
         $price = Product::select('price')->where('id', $id)->value('price');
-        $quantity = $request->get('quantities');
+        $quantity = (int) $request->get('quantities');
 
         $new_item = [
             'product_id' => $item->id,
@@ -47,12 +47,16 @@ class BasketController extends Controller
 
         $basket = session('temporary_basket', []);
 
-        $basket[$item->id] = $new_item;
+        if (isset($basket[$item->id])) {
+            $basket[$item->id]['quantity'] += $quantity;
+            $basket[$item->id]['sum'] = $basket[$item->id]['quantity'] * $price;
+        } else {
+            $basket[$item->id] = $new_item;
+        }
 
         session(['temporary_basket' => $basket]);
 
         //dd($basket);
-
 
         return view('products.product-refreshed', compact('basket', 'item'));
     }
@@ -67,7 +71,7 @@ class BasketController extends Controller
             'total_amount' => 1200,
         ]);
 
-         session(['temporary_basket' => []]);
+        session(['temporary_basket' => []]);
 
         return redirect()->to('/products')->with('created', 'Produit ajouté');
     }

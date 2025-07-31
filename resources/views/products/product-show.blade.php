@@ -27,7 +27,7 @@
         <div class="text-end" style="width:50vh">
             <div class="input-group">
                 <input type="number" class="form-control" id="quantities" name="quantities"
-                    value="{{  request('quantities') }}" min="1" >
+                    value="{{  request('quantities') ??1}}" min="1" >
                 <span class="input-group-text">cookie(s)</span>
             </div>
 
