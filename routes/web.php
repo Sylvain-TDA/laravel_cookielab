@@ -1,44 +1,50 @@
 <?php
 
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\BackOfficeController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\PageProduit;
+use App\Http\Controllers\PageProduitController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 
 
 //Route::get('/page-produit/{id}',[App\Http\Controllers\PageProduit::class, 'show'])->name('page-produit');
 
-Route::post('/products',[ProductController::class,'store'])->name('basketForm');//name is not good
+Route::post('/products',[PageProduitController::class,'store'])->name('basketForm');//name is not good
 
 Route::get('/', function () {
     return view('welcome'); 
 })->name('accueil');
 
-Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('catalogue');
+Route::get('/products', [PageProduitController::class, 'index'])->name('catalogue');
 
-Route::get('/products/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('products.show');
+Route::get('/products/{id}', [PageProduitController::class, 'show'])->name('products.show');
+
+Route::get('/products/{id}/refreshed', [BasketController::class, 'beforeBasket',])->name('refreshed');
 
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');  
 
-Route::get('/basket', [BasketController::class, 'show'])->name('basket');
+Route::get('/basket', [BasketController::class, 'show',])->name('basket');
 
-Route::get('/', [App\Http\Controllers\HomePageController::class, 'show'])->name('accueil');
+Route::get('/', [HomePageController::class, 'show'])->name('accueil');
 
-Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('search');
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 
-Route::get('/backoffice', [App\Http\Controllers\BackOfficeController::class, 'index'])->name('backoffice');
+Route::get('/backoffice', [BackOfficeController::class, 'index'])->name('backoffice');
 
-Route::get('/backoffice/{id}', [App\Http\Controllers\BackOfficeController::class, 'show'])->name('backoffice.product-show');
+Route::get('/backoffice/{id}', [BackOfficeController::class, 'show'])->name('backoffice.product-show');
 
-Route::get('/backoffice/{id}/edit', [App\Http\Controllers\BackOfficeController::class, 'edit'])->name('backoffice.product-edit');
+Route::get('/backoffice/{id}/edit', [BackOfficeController::class, 'edit'])->name('backoffice.product-edit');
 
-Route::put('/backoffice/{id}/update', [App\Http\Controllers\BackOfficeController::class, 'update'])->name('backoffice.product-update');
+Route::put('/backoffice/{id}/update', [BackOfficeController::class, 'update'])->name('backoffice.product-update');
 
-Route::delete('/backoffice/{id}/delete', [App\Http\Controllers\BackOfficeController::class, 'delete'])->name('backoffice.product-delete');
+Route::delete('/backoffice/{id}/delete', [BackOfficeController::class, 'delete'])->name('backoffice.product-delete');
 
-Route::get('/backoffice/products/create', [App\Http\Controllers\BackOfficeController::class, 'showCreate'])->name('backoffice.product-create');
+Route::get('/backoffice/products/create', [BackOfficeController::class, 'showCreate'])->name('backoffice.product-create');
 
-Route::post('/backoffice/products/create', [App\Http\Controllers\BackOfficeController::class, 'store'])->name('backoffice.product.store');
+Route::post('/backoffice/products/create', [BackOfficeController::class, 'store'])->name('backoffice.product.store');

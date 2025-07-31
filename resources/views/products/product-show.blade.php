@@ -4,6 +4,8 @@
 
     <x-breadcrumb :items="$breadcrumbs ?? []" />
 
+
+
     <div class="d-flex flex-column bd-hightlight mb-3">
         <div class="">
             <img src="/images/cookie.png" width="300vh" height="auto" alt="Responsive image" />
@@ -17,25 +19,24 @@
             </div>
         </div>
     </div>
-    <form class="d-flex" action="{{ route('basketForm') }}" method="POST">
-        @csrf
-
+    <form class="d-flex" action="{{ route('refreshed',['id' => $product->id]) }}" method="GET">
         <div class="text-end" style="width:50vh">
             <div class="input-group">
-                <input type="number" class="form-control" id="price" name="price" value="{{ old('quantity',request('quantity')) }}">
+                <input type="number" class="form-control" id="quantities" name="quantities"
+                    value="{{  request('quantities') }}">
                 <span class="input-group-text">cookie(s)</span>
             </div>
-           
 
-            <p class="m-3" value="{{ old('price',request('price')) }}">Prix : {{$product->price}}</p>
-            <button class="btn text-light" type="submit" style="width: 130px;height: 60px;background-color:#BE6600cc;">
-                Ajouter au panier
-            </button>
 
-            {{ request('price') }}
+        <p class="m-3" value="{{request('price') }}">Prix unitaire: {{$product->price}}</p>
+     
+        <button class="btn text-light" type="submit" style="width: 130px;height: 60px;background-color:#BE6600cc;">
+            Ajouter au panier
+        </button>
 
-        </div>
+             </div>
     </form>
+
 
 </main>
 <x-footer />
