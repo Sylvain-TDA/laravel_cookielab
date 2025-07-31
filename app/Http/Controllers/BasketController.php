@@ -75,4 +75,12 @@ class BasketController extends Controller
 
         return redirect()->to('/products')->with('created', 'Produit ajouté');
     }
+
+    public function emptyBasket() {
+     
+        session()->forget('temporary_basket');
+
+        return redirect()->to('/basket')->with('empty', 'Panier vidé');
+    }
+    
 }

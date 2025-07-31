@@ -29,6 +29,8 @@ Route::get('/basket', [BasketController::class, 'show',])->name('basket');
 
 Route::post('/basket-create', [BasketController::class, 'createOrder'])->name('basket-create');
 
+Route::put('/empty-basket', [BasketController::class, 'emptyBasket'])->name('empty-basket');
+
 Route::get('/', [HomePageController::class, 'show'])->name('accueil');
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
