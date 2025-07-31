@@ -71,7 +71,7 @@
                     <a class="text-light nav-link" href="{{ route('basket') }}">
                         <span><i class="fas fa-shopping-cart"></i></span>
                         <span class="badge rounded-pill bg-danger"
-                            style="font-size: 0.75rem; padding: .35em .6em;">1</span>
+                            style="font-size: 0.75rem; padding: .35em .6em;"> {{ is_array(session('temporary_basket')) ? count(session('temporary_basket')) : 0 }}</span>
 
 
                     </a>
