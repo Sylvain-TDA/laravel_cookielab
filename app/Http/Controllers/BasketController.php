@@ -9,22 +9,15 @@ use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Arr;
 
 class BasketController extends Controller
 {
     public function show(): View
     {
 
-
-        //     $order = Order::latest()->first();
-        //     $order_items = OrderItem::with('product')->where('order_id', $order->id)->get();
-        //     // dd($order_items);
-        //     $order_id = Order::where('customer_id', '1');
-        //     $basket = Basket::where('order_item_id', $order->id)->get();
-
         $temporary_basket = session('temporary_basket', null);
-        //dd($temporary_basket);
-
+        //dd($temporary_basket,$total_amout);
         return view('components.basket-show', ['temporary_basket' => $temporary_basket]);
     }
 
@@ -61,14 +54,15 @@ class BasketController extends Controller
         return view('products.product-refreshed', compact('basket', 'item'));
     }
 
-    public function createOrder(Request $request)
+    public function createOrder()
     {
-
+        $temporary_basket = session('temporary_basket', null);
+        $total_amout = collect($temporary_basket)->sum('sum');
         Order::create([
             'customer_id' => 1,
             'discount_id' => 1,
             'delivery_mode_id' => 1,
-            'total_amount' => 1200,
+            'total_amount' => $total_amout,
         ]);
 
         session(['temporary_basket' => []]);
@@ -76,11 +70,11 @@ class BasketController extends Controller
         return redirect()->to('/products')->with('created', 'Produit ajouté');
     }
 
-    public function emptyBasket() {
-     
+    public function emptyBasket()
+    {
+
         session()->forget('temporary_basket');
 
         return redirect()->to('/basket')->with('empty', 'Panier vidé');
     }
-    
 }
