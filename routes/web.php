@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackOfficeController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\PageProduit;
 use App\Http\Controllers\ProductController;
@@ -11,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/products', [ProductController::class, 'store'])->name('product.store');
 
-Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
 
-Route::delete('/products/{id}/delete',[ProductController::class,'delete'])->name('product.delete');
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,4 +34,9 @@ Route::get('/', [App\Http\Controllers\HomePageController::class, 'show'])->name(
 
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'search'])->name('search');
 
-Route::get('/backoffice', [App\Http\Controllers\BackOfficeController::class, 'show'])->name('backoffice');
+Route::get('/backoffice', [BackOfficeController::class, 'show'])->name('backoffice');
+Route::get('/backoffice/{id}/edit', [BackOfficeController::class, 'ShowProduct'])->name('backoffice.edit');
+Route::get('/backoffice/create',[BackOfficeController::class,'showCreate'])->name('backoffice.create');
+Route::put('/backoffice/{id}/update-name',[BackOfficeController::class, 'updateNameProduct'])->name('backoffice.name');
+Route::put('/backoffice/{id}/update-price',[BackOfficeController::class, 'updatePriceProduct'])->name('backoffice.price');
+Route::delete('/backoffice/{id}/delete',[BackOfficeController::class,'delete'])->name('backoffice.delete');

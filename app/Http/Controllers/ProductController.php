@@ -32,7 +32,7 @@ class ProductController extends Controller
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],
             ['title' => 'Produits', 'url' => '']
-        ];
+        ]; 
         return view('products.product', compact('products', 'breadcrumbs'));
     }
     //
@@ -63,7 +63,7 @@ class ProductController extends Controller
             'price' => 'required|numeric',]);
 
             Product::create($validated);
-
+      
             return redirect()->back()->with('success','produit ajouté !');
         }
 

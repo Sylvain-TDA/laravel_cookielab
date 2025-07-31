@@ -6,9 +6,31 @@ use App\Models\Product;
 
 class ProductService
 {
+    public function createProduct($data)
+    {
+        $product = new Product();
+
+        $product->name = $data['name'];
+        $product->description = $data['description'];
+        $product->price = $data['price'];
+        $product->url_image = $data['url_image'];
+        $product->stock = $data['stock'];
+        $product->is_available = $data['is_available'] ?? true;
+
+        $product->create($data);
+        return $product;      
+    }
+
+    public function updateProduct($id, $data)
+    {
+        $product = Product::findOrFail($id);
+        $product->update($data);
+        return $product;
+    }
+
     public function getProducts()
     {
-                return Product::select('id', 'name', 'description', 'price', 'url_image')    
+                return Product::select('id', 'name', 'description', 'price', 'url_image','stock', 'is_available')    
                 ->take(9)       
                 ->get(); 
    }
