@@ -19,7 +19,7 @@
             <div class="card h-100">
                 <div class="card-body">
                     @if(empty($temporary_basket))
-                        <div>Votre panier est vide 😢</div>
+                        <div style="height:41.2vh;">Votre panier est vide 😢</div>
                     @else
                         <div class="d-flex flex-wrap">
                             @foreach($temporary_basket as $cookie)

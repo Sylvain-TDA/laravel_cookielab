@@ -41,6 +41,8 @@ Route::post('/products', [PageProduitController::class, 'store'])->name('basketF
 
 Route::get('/products', [PageProduitController::class, 'index'])->name('catalogue');
 
+Route::get('/full-products', [PageProduitController::class, 'fullIndex'])->name('full-products');
+
 Route::get('/products/{id}', [PageProduitController::class, 'show'])->name('products.show');
 
 Route::get('/products/{id}/refreshed', [BasketController::class, 'beforeBasket',])->name('refreshed');

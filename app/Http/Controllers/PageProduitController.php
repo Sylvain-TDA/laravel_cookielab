@@ -28,6 +28,21 @@ class PageProduitController extends Controller
 ]);
     }
 
+    public function fullIndex(): View
+    {
+        $products = Product::where('is_available',1)->get();
+
+        $breadcrumbs = [
+            ['title' => 'Accueil', 'url' => route('accueil')],
+            ['title' => 'Produits', 'url' => '']
+        ];
+
+        return view('products.full-products', [
+    'products' => $products,
+    'breadcrumbs' => $breadcrumbs
+]);
+    }
+
     //
     public function show($id): View
     {

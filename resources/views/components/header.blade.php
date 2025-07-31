@@ -70,8 +70,8 @@
                 <li class="nav-item me-3 me-lg-2">
                     <a class="text-light nav-link" href="{{ route('basket') }}">
                         <span><i class="fas fa-shopping-cart"></i></span>
-                        <span class="badge rounded-pill bg-danger"
-                            style="font-size: 0.75rem; padding: .35em .6em;"> {{ is_array(session('temporary_basket')) ? count(session('temporary_basket')) : 0 }}</span>
+                        <span class="badge rounded-pill bg-danger" style="font-size: 0.75rem; padding: .35em .6em;">
+                            {{ is_array(session('temporary_basket')) ? count(session('temporary_basket')) : 0 }}</span>
 
 
                     </a>
@@ -80,15 +80,11 @@
 
                 <!-- Avatar -->
                 <li class="nav-item dropdown align-self-center">
-                    <a class="text-light nav-link dropdown-toggle d-flex align-items-center" href="#"
-                        id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init aria-expanded="false">
+                    <a class="text-light nav-link dropdown-toggle d-flex align-items-center"
+                        href="{{ route('dashboard') }}" id="navbarDropdownMenuLink" role="button" data-mdb-dropdown-init
+                        aria-expanded="false">
                         <i class="text-light fa-solid fa-circle-user fs-4"></i>
                     </a>
-                    <ul class="text-light dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="text-light dropdown-item" href="#">My profile</a></li>
-                        <li><a class="text-light dropdown-item" href="#">Settings</a></li>
-                        <li><a class="text-light dropdown-item" href="#">Logout</a></li>
-                    </ul>
                 </li>
 
             </ul>
