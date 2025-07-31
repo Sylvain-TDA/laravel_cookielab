@@ -25,7 +25,7 @@ class BasketController extends Controller
         $temporary_basket = session('temporary_basket', null);
         //dd($temporary_basket);
 
-        return view('components.basket-show', compact('temporary_basket'));
+        return view('components.basket-show', ['temporary_basket' => $temporary_basket]);
     }
 
     public function beforeBasket(Request $request, $id)
@@ -53,6 +53,7 @@ class BasketController extends Controller
 
         //dd($basket);
 
-        return view('products.product-refreshed', compact('temporary_basket', 'item'));
+
+        return view('products.product-refreshed', compact('basket', 'item'));
     }
 }

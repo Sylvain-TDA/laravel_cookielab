@@ -9,16 +9,16 @@
                     <img src="/images/cookie.png" width="300vh" height="auto" alt="Responsive image" />
                     <div>
                         <h1 class="m-1 p-1 text-light" style="background-color:#B66E00cc; border-radius:10px;">
-                            {{ $temporary_basket['name'] }}
+                            {{ $basket[$item->id]['name'] }}
                         </h1>
                         <br>
-                        <h2>{{ $temporary_basket['description'] }}</h2>
+                        <h2>{{ $basket[$item->id]['description'] }}</h2>
                         <br>
                     </div>
                 </div>
             </div>
 
-    <form class="d-flex" action="{{ route('refreshed', ['id' => $temporary_basket['product_id']]) }}" method="GET">
+    <form class="d-flex" action="{{ route('refreshed', ['id' => $basket[$item->id]['product_id']]) }}" method="GET">
 
       
         <div class="text-end" style="width:50vh">
@@ -28,9 +28,9 @@
                 <span class="input-group-text">cookie(s)</span>
             </div>
             
-            @if(isset($temporary_basket))
-                <p>Quantité : {{ $temporary_basket['quantity'] }}</p>
-                <p>Prix total : {{ $temporary_basket['sum'] }} €</p>
+            @if(isset($basket))
+                <p>Quantité : {{ $basket[$item->id]['quantity'] }}</p>
+                <p>Prix total : {{ $basket[$item->id]['sum'] }} €</p>
             @endif
 
             <a href="{{ route('catalogue') }}">Retour au catalogue</a>

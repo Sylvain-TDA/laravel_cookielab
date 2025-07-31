@@ -14,6 +14,7 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <div class="card-body">
+                        <img src="{{ $product->url_image }}" alt="cookie {{ $product->name }}"  style="height:100px; width: auto;"> 
                         <h5 class="card-title">{{ $product->name }}</h5>
                         <p class="card-text">{{ Str::limit($product->description, 100) }}</p>
                         <p class="card-text">
