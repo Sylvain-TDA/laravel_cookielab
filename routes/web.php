@@ -7,7 +7,6 @@ use App\Http\Controllers\BackOfficeController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
-
 // Page d'accueil
 Route::get('/', [HomePageController::class, 'show'])->name('accueil');
 
@@ -35,3 +34,14 @@ Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 // Back Office
 Route::get('/backoffice', [BackOfficeController::class, 'show'])->name('backoffice');
+
+
+Route::get('/backoffice', [BackOfficeController::class, 'home'])->name('backoffice');
+Route::get('/backoffice/products', [BackOfficeController::class, 'index'])->name('storeBackOffice');
+Route::post('/backoffice/products', [BackOfficeController::class, 'store'])->name('storeProduct');
+Route::get('/backoffice/products/new', [BackOfficeController::class, 'create'])->name('newProduct');
+Route::get('/backoffice/products/{id}', [BackOfficeController::class, 'show'])->name('productDetailsBackOffice');
+
+Route::get('/backoffice/products/{id}/edit', [BackOfficeController::class, 'edit'])->name('editProduct');
+Route::put('/backoffice/products/{id}', [BackOfficeController::class, 'update'])->name('updateProduct');
+Route::delete('/backoffice/products/{id}', [BackOfficeController::class, 'delete'])->name('deleteProduct');

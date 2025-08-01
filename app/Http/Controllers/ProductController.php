@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Services\ProductSorter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -14,11 +16,22 @@ class ProductController extends Controller
         $this->sorter = $sorter;
     }
 
+    public function indexSQL()
+    {
+        $products = DB::select('
+    SELECT * FROM products
+    WHERE is_active = 1
+    AND is_available = 1
+    AND stock > 0
+    ORDER BY name ASC
+    ');
+    }
+
     /** Afficher la liste des produits disponibles */
     public function index(Request $request)
     {
         $query = Product::sellable();
-        
+
         $query = $this->sorter->applySort($request, $query);
 
         $products = $query->paginate(12);
@@ -80,7 +93,7 @@ class ProductController extends Controller
             'currentOrder' => $this->sorter->getCurrentOrder($request),
         ]);
     }
-    
+
     /** Afficher les produits en stock */
     public function inStock(Request $request)
     {
@@ -103,19 +116,19 @@ class ProductController extends Controller
         ]);
     }
 
-     /** Afficher les produits d'une catégorie spécifique */
+    /** Afficher les produits d'une catégorie spécifique */
     public function category($categoryId, Request $request)
     {
         $query = Product::sellable()->where('category_id', $categoryId);
         $query = $this->sorter->applySort($request, $query);
-        
+
         $products = $query->paginate(12);
 
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],
             ['title' => 'Nos produits', 'url' => '']
         ];
-        
+
         return view('products.product', [
             'products' => $products,
             'breadcrumbs' => $breadcrumbs,
