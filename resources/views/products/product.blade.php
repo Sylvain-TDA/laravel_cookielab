@@ -45,7 +45,7 @@
                 </div>
             @endforelse
             @if(count($products) > $maxVisible)
-        <a href="{{ route('full-products',$product->id) }}" class="btn btn-link">Voir plus</a>
+        <a href="{{ route('full-products',$product->id) }}" class="btn text-light" style="background-color:#B66E00cc">Voir plus</a>
     @endif
         </div>
     </div>

@@ -57,4 +57,7 @@ Route::get('/', [HomePageController::class, 'show'])->name('accueil');
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
+Route::get('dynamic-modal', [\App\Http\Controllers\ModalController::class, 'dynamicModal'])->name('dynamic-modal');
+Route::get('modal-content', [\App\Http\Controllers\ModalController::class, 'modalContent'])->name('modal-content');
+
 require __DIR__ . '/auth.php';
