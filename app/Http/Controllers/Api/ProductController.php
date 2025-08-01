@@ -28,16 +28,32 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        
+
 
         return response()->json($product);
     }
 
+    public function store(Request $request)
+    {
+        $product = Product::create(attributes: [
+            'name' => 'mon cookie',
+            'category_id' => 1,
+            'description' => 'il est pas mal',
+            'price' =>  2,
+            'url_image' => 'https://tse4.mm.bing.net/th/id/OIP.Iw2-f7lE2bdU-Ncc0FNL0gHaLH?r=0&pid=Api',
+            'stock' => 1,
+            'is_available' => 1,
+            'weight' => 100,
+        ]);
+
+        return response()->json($product,201);
+    }
+
     public function edit($id): JsonResponse
     {
-                $product = Product::find($id);
+        $product = Product::find($id);
 
-        
+
 
         return response()->json($product);
     }
@@ -92,44 +108,6 @@ class ProductController extends Controller
         return redirect()->to('/backoffice')->with('success', 'Produit supprimé');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate(rules: [
-            'name' => 'required|max:255',
-            'category_id' => 'numeric|required',
-            'description' => 'required|max:255',
-            'price' => 'numeric|required|gt:0',
-            'url_image' => 'nullable',
-            'stock' => 'numeric|min:0',
-            'is_available' => 'nullable',
-            'weight' => 'numeric|nullable|gt:0',
-        ], params: [
-            'name.required' => 'Le nom du produit est obligatoire.',
-            'name.max' => 'Le nom ne doit pas dépasser 255 caractères.',
-            'category_id.required' => 'La catégorie est obligatoire.',
-            'category_id.numeric' => 'La catégorie doit être un identifiant numérique.',
-            'description.required' => 'La description est obligatoire.',
-            'price.required' => 'Le prix est obligatoire.',
-            'price.numeric' => 'Le prix doit être un nombre.',
-            'price.gt' => 'Le prix doit être strictement supérieur à zéro.',
-            'stock.numeric' => 'Le stock doit être un nombre.',
-            'stock.min' => 'Le stock ne peut pas être négatif.',
-            'weight.numeric' => 'Le poids doit être un nombre.',
-            'weight.gt' => 'Le poids doit être strictement supérieur à zéro.',
-        ]);
-        Product::create(attributes: [
-            'name' => $request->input('name'),
-            'category_id' => $request->input('category_id'),
-            'description' => $request->input('description'),
-            'price' => $request->input('price'),
-            'url_image' => $request->input('url_image'),
-            'stock' => $request->input('stock'),
-            'is_available' => $request->input('is_available'),
-            'weight' => $request->input('weight'),
-        ]);
-
-        return redirect()->to('/backoffice')->with('success', 'Produit ajouté');
-    }
 
     public function showCreate(): View
     {
