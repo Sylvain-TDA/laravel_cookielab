@@ -12,8 +12,7 @@ Route::get('/test', function () {
     ]);
 });
 
-// Groupe pour la version 1 de l'API
-Route::prefix('v1')->group(function () {
-    // Routes automatiques pour les produits (REST)
-    Route::apiResource('products', ArticleController::class);
-});
+
+
+Route::apiResource('products', ArticleController::class);
+

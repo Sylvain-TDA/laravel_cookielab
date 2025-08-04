@@ -13,8 +13,7 @@ class ArticleController extends Controller
 $products = Product::all();
 
         return response()->json([
-            'success' => true,
-            'data' => $products
+             $products
         ]);
     }
 
@@ -42,8 +41,14 @@ $products = Product::all();
      public function store(Request $request)
     {
         $products = Product::create([
-            'name' => $request->name,
-            'description' => $request->description
+        'name' => $request->name,
+        'category_id' => $request->category_id,
+        'description' => $request->description,
+        'price' => $request->price,
+        'url_image' => $request->url_image,
+        'stock' => $request->stock,
+        'is_available' => $request->is_available,
+        'weight' => $request->weight,
         ]);
         
         return response()->json([
@@ -65,7 +70,13 @@ $products = Product::all();
         
         $products->update([
             'name' => $request->name,
-            'description' => $request->description
+            'category_id' => $request->category_id,
+            'description' => $request->description,
+            'price' => $request->price,
+            'url_image' => $request->url_image,
+            'stock' => $request->stock,
+            'is_available' => $request->is_available,
+            'weight' => $request->weight,
         ]);
         
         return response()->json([
