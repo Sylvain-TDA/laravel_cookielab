@@ -110,9 +110,12 @@
                     </div>
 
                     <div class="card-footer">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <a href="{{ route('products.show', $product->id) }}" class="btn text-light" style="background-color: #B66E00cc">
+                        <div class="d-flex justify-content-center align-items-center gap-3">
+                            <a href="{{ route('productDetailsBackOffice', $product) }}" class="btn text-light" style="background-color: #B66E00cc">
                                 Voir le détail
+                            </a>
+                            <a href="{{ route('editProduct', $product) }}" class="btn btn-primary">
+                              <i class="fas fa-edit"></i> Modifier
                             </a>
                         </div>
                     </div>

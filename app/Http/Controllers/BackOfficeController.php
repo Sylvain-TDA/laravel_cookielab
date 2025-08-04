@@ -39,10 +39,13 @@ class BackOfficeController extends Controller
         ]);
     }
 
-    public function show($id): View
+    public function show(Product $product): View
     {
-
-        return view('backoffice.product-details', compact('id'));
+        // Vérifier si le produit est actif
+        if (!$product->is_active) {
+            abort(404, 'Produit non disponible');
+        }
+        return view('backoffice.product-details', compact('product'));
     }
 
     public function create(): View
@@ -51,7 +54,7 @@ class BackOfficeController extends Controller
         return view('backoffice.new-product', compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
@@ -76,16 +79,37 @@ class BackOfficeController extends Controller
 
         Product::create($data);
 
-        return redirect()->route('storeBackOffice')->with('success', 'Produit créé avec succès.');
+        return redirect()->back()->with('success', 'Produit mis à jour.');
     }
 
-    public function edit($id): View
+    public function edit(Product $product): View
     {
-        return view('backoffice.edit-product', compact('id'));
+        $categories = Category::all();
+        return view('backoffice.edit', compact('product', 'categories'));
     }
 
-    public function delete($id): \Illuminate\Http\RedirectResponse
+    public function update(Request $request, Product $product): RedirectResponse
     {
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id',
+            'description' => 'nullable|string',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
+            'url_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'weight' => 'nullable|numeric|min:0',
+            'is_active' => 'boolean',
+            'is_available' => 'boolean',
+        ]);
+
+        $product->update($data);
+        return redirect()->route('storeBackOffice')->with('success', 'Produit mis à jour.');
+    }
+
+    public function delete($id): RedirectResponse
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
         return redirect()->route('deleteProduct')->with('success', 'Produit supprimé avec succès.');
     }
 }

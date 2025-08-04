@@ -27,21 +27,26 @@ Route::get('/contact', function () {
 })->name('contact');  
 
 // Panier
-Route::get('/basket', [BasketController::class, 'show'])->name('basket');
+Route::post('/basket', [BasketController::class, 'show'])->name('basket');
 
 // Recherche
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
-// Back Office
+// BACK OFFICE
 Route::get('/backoffice', [BackOfficeController::class, 'show'])->name('backoffice');
 
-
+// Affichage dashboard et catalogue
 Route::get('/backoffice', [BackOfficeController::class, 'home'])->name('backoffice');
 Route::get('/backoffice/products', [BackOfficeController::class, 'index'])->name('storeBackOffice');
-Route::post('/backoffice/products', [BackOfficeController::class, 'store'])->name('storeProduct');
-Route::get('/backoffice/products/new', [BackOfficeController::class, 'create'])->name('newProduct');
-Route::get('/backoffice/products/{id}', [BackOfficeController::class, 'show'])->name('productDetailsBackOffice');
 
-Route::get('/backoffice/products/{id}/edit', [BackOfficeController::class, 'edit'])->name('editProduct');
-Route::put('/backoffice/products/{id}', [BackOfficeController::class, 'update'])->name('updateProduct');
-Route::delete('/backoffice/products/{id}', [BackOfficeController::class, 'delete'])->name('deleteProduct');
+// Routes pour la création de nouveau produit
+Route::get('/backoffice/products/create', [BackOfficeController::class, 'create'])->name('newProduct');
+Route::post('/backoffice/products', [BackOfficeController::class, 'store'])->name('storeProduct');
+
+// Affichage d'un produit spécifique
+Route::get('/backoffice/products/{product}', [BackOfficeController::class, 'show'])->name('productDetailsBackOffice');
+
+// Routes pour edit/update/delete un produit
+Route::get('/backoffice/products/{product}/edit', [BackOfficeController::class, 'edit'])->name('editProduct');
+Route::put('/backoffice/products/{product}', [BackOfficeController::class, 'update'])->name('updateProduct');
+Route::delete('/backoffice/products/{product}', [BackOfficeController::class, 'delete'])->name('deleteProduct');

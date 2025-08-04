@@ -53,16 +53,11 @@ class ProductController extends Controller
     /** Afficher un produit spécifique */
     public function show($id)
     {
-        // Récupération du produit par son ID
-        $product = Product::find($id);
-
-        // Vérification de l'existence du produit
-        if (!$product) {
-            abort(404, 'Produit non trouvé');  // Produit non trouvé
-        }
-        if (!$product->is_active) {
-            abort(404, 'Produit indisponible');  // Produit indisponible
-        }
+        $product = Product::findOrFail($id);
+        // Vérifier si le produit est actif et disponible
+        if (!$product->is_active || !$product->is_available) {
+        abort(404, 'Produit non disponible');
+    }
 
         $breadcrumbs = [
             ['title' => 'Accueil', 'url' => route('accueil')],
