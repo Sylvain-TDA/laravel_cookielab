@@ -67,18 +67,9 @@ $products = Product::all();
                 'message' => 'Produit non trouvé'
             ], 404);
         }
-        
-        $products->update([
-            'name' => $request->name,
-            'category_id' => $request->category_id,
-            'description' => $request->description,
-            'price' => $request->price,
-            'url_image' => $request->url_image,
-            'stock' => $request->stock,
-            'is_available' => $request->is_available,
-            'weight' => $request->weight,
-        ]);
-        
+
+        $products->update($request->all());
+
         return response()->json([
             'success' => true,
             'data' => $products,
